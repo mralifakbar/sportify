@@ -519,4 +519,17 @@ body footer .nav-footer a:hover {
 body footer li {
   margin-bottom: 16px;
 }
+
+.section-login {
+  margin-top: 10%;
+}
+
+.section-login form input {
+  height: 60px !important;
+}
+
+.section-login form a {
+  text-decoration: none;
+  color: var(--primary);
+}
 /*# sourceMappingURL=main.css.map */

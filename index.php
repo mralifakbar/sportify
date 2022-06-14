@@ -7,7 +7,7 @@
     <title>Sportify - Booking Lapangan Online</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
     <link rel="shortcut icon" href="images/ball.svg" type="image/x-icon">
 </head>
 
@@ -25,7 +25,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
-                    <a href="" class="btn btn-outline-primary px-4 py-2 me-lg-2 ms-lg-auto mt-4 mt-lg-0 d-block d-lg-inline-block ">Masuk</a>
+                    <a href=""
+                        class="btn btn-outline-primary px-4 py-2 me-lg-2 ms-lg-auto mt-4 mt-lg-0 d-block d-lg-inline-block ">Masuk</a>
                     <a href="" class="btn btn-primary px-4 py-2 mt-3 mt-lg-0 d-block d-lg-inline-block">Daftar</a>
                 </div>
             </div>
@@ -163,8 +164,7 @@
                     <div class="row benefits">
                         <div class="col-md-4 mt-md-0">
                             <div class="rectangle mx-auto px-1">
-                                <img src="images/ic_signup.png" width="106"
-                                    alt="benefits-1" class="img-fluid">
+                                <img src="images/ic_signup.png" width="106" alt="benefits-1" class="img-fluid">
                                 <div class="headline-benefit">
                                     Daftar
                                 </div>
@@ -176,8 +176,7 @@
                         </div>
                         <div class="col-md-4 mt-5 mt-md-0">
                             <div class="rectangle mx-auto px-1">
-                                <img src="images/ic_booking.png"
-                                    alt="benefits-1" class="img-fluid" width="106">
+                                <img src="images/ic_booking.png" alt="benefits-1" class="img-fluid" width="106">
                                 <div class="headline-benefit">
                                     Booking Lapangan
                                 </div>
@@ -189,8 +188,7 @@
                         </div>
                         <div class="col-md-4 mt-5 mt-md-0">
                             <div class="rectangle mx-auto px-1">
-                                <img src="images/ic_pay.png"
-                                    alt="benefits-1" class="img-fluid" width="106">
+                                <img src="images/ic_pay.png" alt="benefits-1" class="img-fluid" width="106">
                                 <div class="headline-benefit">
                                     Bayar
                                 </div>
@@ -209,7 +207,7 @@
                             <a href="#client" class="btn btn-outline-primary px-4 py-2 mt-2 mt-md-0">Baca Testimoni</a>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -231,16 +229,15 @@
         <div class="container review-section">
             <div class="row">
                 <div class="col-md-5 px-5 mt-4 mt-md-0 d-flex justify-content-center">
-                    <img src="images/golf-man.jpg"
-                        alt="" class="img-fluid img-gym">
+                    <img src="images/golf-man.jpg" alt="" class="img-fluid img-gym">
                 </div>
                 <div class="col-md-7 mt-4 mt-md-0 pe-lg-5">
                     <div class="text-end mb-3">
-                        <img src="images/petik.png"
-                            alt="mark" class="img-fluid">
+                        <img src="images/petik.png" alt="mark" class="img-fluid">
                     </div>
                     <p class="review">
-                        Semenjak saya memakai Sportify, saya tidak takut lagi tidak kebagian lapangan. Cukup booking dan bayar lewat website ini. Terima kasih Sportify.
+                        Semenjak saya memakai Sportify, saya tidak takut lagi tidak kebagian lapangan. Cukup booking dan
+                        bayar lewat website ini. Terima kasih Sportify.
                     </p>
                     <h5 class="mt-5">
                         Alif Akbar
