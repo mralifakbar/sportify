@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kelola Transaksi - Sportify</title>
+    <title>Owner Dashboard - Sportify</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
@@ -43,57 +43,56 @@
             <div class="container">
                 <ul class="nav nav-tabs fs-5">
                     <li class="nav-item">
-                        <a class="nav-link text-muted" href="index.php">Dashboard</a>
+                        <a class="nav-link active fw-bold" href="index.php">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-muted " href="lapangan.php">Lapangan</a>
+                        <a class="nav-link text-muted" aria-current="page" href="lapangan.php">Lapangan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-muted " href="user.php">User</a>
+                        <a class="nav-link text-muted" href="user.php">User</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-muted fw-bold active" aria-current="page"
-                            href="transaksi.php">Transaksi</a>
+                        <a class="nav-link text-muted" href="transaksi.php">Transaksi</a>
                     </li>
                 </ul>
 
-                <div class="table-responsive mt-4">
-                    <table class="table table-hover align-middle">
-                        <thead class="fw-bold">
-                            <tr>
-                                <td>ID Transaksi</td>
-                                <td>Pemesan</td>
-                                <td>Olahraga</td>
-                                <td>Lapangan</td>
-                                <td>Tanggal Booking</td>
-                                <td>Jam Booking</td>
-                                <td>Durasi (Jam)</td>
-                                <td>Jenis Bayar</td>
-                                <td>Status</td>
-                                <td>Total Harga</td>
-                                <td>Aksi</td>
-                            </tr>
-                        </thead>
-                        <tbody class="table-group-divider">
-                            <tr>
-                                <td>1</td>
-                                <td>Tien Si</td>
-                                <td>Futsal</td>
-                                <td>Ghinan Futsal</td>
-                                <td>2022-06-20</td>
-                                <td>16:00</td>
-                                <td>2</td>
-                                <td>Lunas</td>
-                                <td>Selesai</td>
-                                <td>Rp.100000</td>
-                                <td>
-                                    <a href="#" class="btn btn-outline-secondary">Ubah</a>
-                                    <a href="#" class="btn btn-outline-primary">Hapus</a>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
+                <div class="row mt-4">
+                    <div class="col-lg-3 mb-3 mb-lg-0">
+                        <div class="card text-center w-100">
+                            <div class="card-body py-5">
+                                <h5 class="card-title fs-3">Jumlah Lapangan</h5>
+                                <p class="card-text fs-2 my-3 fw-bold">3</p>
+                                <a href="#" class="btn btn-primary">Lihat Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mb-3 mb-lg-0">
+                        <div class="card text-center w-100">
+                            <div class="card-body py-5">
+                                <h5 class="card-title fs-3">Jumlah Booking</h5>
+                                <p class="card-text fs-2 my-3 fw-bold">12</p>
+                                <a href="#" class="btn btn-primary">Lihat Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mb-3 mb-lg-0">
+                        <div class="card text-center w-100">
+                            <div class="card-body py-5">
+                                <h5 class="card-title fs-3">Jumlah Transaksi</h5>
+                                <p class="card-text fs-2 my-3 fw-bold">Rp.200.000.000</p>
+                                <a href="#" class="btn btn-primary">Lihat Detail</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card text-center w-100">
+                            <div class="card-body py-5">
+                                <h5 class="card-title fs-3">Pendapatan Terbesar</h5>
+                                <p class="card-text fs-2 my-3 fw-bold">Rp.800.000</p>
+                                <a href="#" class="btn btn-primary">Lihat Detail</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>

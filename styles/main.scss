@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap");
 
-@import "node_modules/bootstrap/scss/bootstrap";
 
-$theme-colors: (
-  "primary": #ff4757,
-  "danger": #ff4136
-);
+
 :root {
+    --bs-blue: #ff4757 !important;
+    --bs-primary: #ff4757 !important;
     --primary: #ff4757 !important;
 }
 
@@ -548,8 +546,6 @@ body footer li {
 }
 
 .section-login {
-    margin-top: 10%;
-
     form {
         input {
             height: 60px !important;
@@ -609,9 +605,7 @@ body footer li {
     }
 }
 
-@media screen and (min-width: 768px) {
-    body #header {
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
+.logout-menu {
+    color: var(--primary) !important;
 }
+

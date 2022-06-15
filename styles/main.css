@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap");
 :root {
+  --bs-blue: #ff4757 !important;
+  --bs-primary: #ff4757 !important;
   --primary: #ff4757 !important;
 }
 
@@ -530,10 +532,6 @@ body footer li {
   margin-bottom: 16px;
 }
 
-.section-login {
-  margin-top: 10%;
-}
-
 .section-login form input {
   height: 60px !important;
 }
@@ -575,5 +573,13 @@ body footer li {
 .recomendation-header span {
   color: var(--primary);
   font-weight: bold;
+}
+
+.tab-section .nav-link .active {
+  color: var(--primary) !important;
+}
+
+.logout-menu {
+  color: var(--primary) !important;
 }
 /*# sourceMappingURL=main.css.map */

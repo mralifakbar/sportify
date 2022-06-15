@@ -15,7 +15,7 @@
     <div class="full-screen">
         <nav class="navbar navbar-expand-lg navbar-light pt-3 pt-lg-3">
             <div class="container">
-                <a class="navbar-brand p-lg-3 d-flex" href="dashboard.php">
+                <a class="navbar-brand p-lg-3 d-flex" href="index.php">
                     <img src="../images/ball.svg" alt="Brand Icon" class="logo-brand">
                     <h5 class="mb-0 ms-2">Sportify</h5>
                 </a>
@@ -40,9 +40,8 @@
                             Alif Akbar Kartadinata
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Ubah Profil</a></li>
+                            <li><a class="dropdown-item logout-menu" href="#">Keluar</a></li>
                         </ul>
                     </div>
                 </div>
@@ -111,71 +110,10 @@
     </div>
 
 
-    <footer class="page-footer font-small blue">
-        <div class="container text-md-left">
-            <div class="row d-flex flex-column-reverse flex-lg-row">
-                <div class="col-md-6 mt-md-0 mt-3 address align mb-5 mb-lg-0">
-                    <div class="logo font-red-hat-display">
-                        Sportify
-                    </div>
-
-                    <div class="copyright font-red-hat-display align-self-end">
-                        2022 All rights reserved.
-                    </div>
-                </div>
-                <div class="row col-md-6 nav-footer">
-                    <div class="col-md-4 mb-md-0 mb-3">
-                        <p>
-                            Penggunaan
-                        </p>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#!">Panduan</a>
-                            </li>
-                            <li>
-                                <a href="#!">Metode Pembayaran</a>
-                            </li>
-                            <li>
-                                <a href="#!">Costumer Services</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 mb-md-0 mb-3">
-                        <p>
-                            Pengelola Lapangan
-                        </p>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#!">Biaya Listing</a>
-                            </li>
-                            <li>
-                                <a href="#!">Ajukan Listing</a>
-                            </li>
-                            <li>
-                                <a href="#!">Panduan</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 mb-md-0 mb-3">
-                        <p>
-                            Perusahaan Kami
-                        </p>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#!">Tentang Kami</a>
-                            </li>
-                            <li>
-                                <a href="#!">Karir</a>
-                            </li>
-                            <li>
-                                <a href="#!">Blog & Berita</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php 
+    include "../ui/footer.php"
+    ?>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
