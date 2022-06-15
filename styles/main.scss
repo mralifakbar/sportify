@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap");
 
+@import "node_modules/bootstrap/scss/bootstrap";
+
+$theme-colors: (
+  "primary": #ff4757,
+  "danger": #ff4136
+);
 :root {
     --primary: #ff4757 !important;
 }
@@ -35,6 +41,16 @@ body {
         background-color: #FF94A4 !important;
         border-color: #FF94A4 !important;
         color: white !important;
+    }
+
+    &:focus {
+        background-color: white !important;
+        color: var(--primary) !important;
+    }
+
+    &::after {
+        background-color: white !important;
+        color: var(--primary) !important;
     }
 }
 
@@ -543,5 +559,59 @@ body footer li {
             text-decoration: none;
             color: var(--primary);
         }
+    }
+}
+
+.booking-area {
+
+    select,
+    input,
+    button {
+        height: 60px;
+    }
+
+
+}
+
+.full-screen {
+    min-height: 100vh !important;
+}
+
+.choose-sport {
+    a {
+        text-decoration: none;
+        color: var(--primary);
+    }
+    .card {
+        border-radius: 20px !important;
+        
+        img {
+            width: 200px;
+            border-radius: 30px;
+        }
+
+        &:hover {
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+    }
+}
+
+.recomendation-header {
+    span {
+        color: var(--primary);
+        font-weight: bold;
+    }
+}
+
+.tab-section {
+    .nav-link .active{
+        color: var(--primary) !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body #header {
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 }
