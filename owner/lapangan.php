@@ -16,7 +16,7 @@
     <div class="full-screen">
         <nav class="navbar navbar-expand-lg navbar-light pt-3 pt-lg-3">
             <div class="container">
-                <a class="navbar-brand p-lg-3 d-flex" href="#">
+                <a class="navbar-brand p-lg-3 d-flex" href="index.php">
                     <img src="../images/ball.svg" alt="Brand Icon" class="logo-brand">
                     <h5 class="mb-0 ms-2">Sportify</h5>
                 </a>
@@ -51,18 +51,15 @@
                             href="lapangan.php">Lapangan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-muted" href="user.php">User</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link text-muted" href="transaksi.php">Transaksi</a>
                     </li>
                 </ul>
                 <div class="text-end">
-                <a href="tambah-lapangan.php" class="btn btn-primary px-4 py-2 mt-3">
-                <i class="bi bi-plus-square-fill me-2"></i> Tambah Lapangan
-                </a>
+                    <a href="tambah-lapangan.php" class="btn btn-primary px-4 py-2 mt-3">
+                        <i class="bi bi-plus-square-fill me-2"></i> Tambah Lapangan
+                    </a>
                 </div>
-                
+
                 <div class="table-responsive mt-4">
                     <table class="table table-hover align-middle">
                         <thead class="fw-bold">
@@ -87,11 +84,11 @@
                                 <td>13</td>
                                 <td>Kampung Baru</td>
                                 <td>
-                                <a href="#" class="btn btn-outline-secondary">Ubah</a>
+                                    <a href="#" class="btn btn-outline-secondary">Ubah</a>
                                     <a href="#" class="btn btn-outline-primary">Hapus</a>
                                 </td>
                             </tr>
-                           
+
                         </tbody>
                     </table>
                 </div>

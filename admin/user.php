@@ -15,7 +15,7 @@
     <div class="full-screen">
         <nav class="navbar navbar-expand-lg navbar-light pt-3 pt-lg-3">
             <div class="container">
-                <a class="navbar-brand p-lg-3 d-flex" href="#">
+                <a class="navbar-brand p-lg-3 d-flex" href="index.php">
                     <img src="../images/ball.svg" alt="Brand Icon" class="logo-brand">
                     <h5 class="mb-0 ms-2">Sportify</h5>
                 </a>

@@ -25,9 +25,9 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
-                    <a href=""
+                    <a href="login.php"
                         class="btn btn-outline-primary px-4 py-2 me-lg-2 ms-lg-auto mt-4 mt-lg-0 d-block d-lg-inline-block ">Masuk</a>
-                    <a href="" class="btn btn-primary px-4 py-2 mt-3 mt-lg-0 d-block d-lg-inline-block">Daftar</a>
+                    <a href="register.php" class="btn btn-primary px-4 py-2 mt-3 mt-lg-0 d-block d-lg-inline-block">Daftar</a>
                 </div>
             </div>
         </nav>
@@ -72,7 +72,7 @@
                     <div class="stat">
                         <p class="descript-head">
                             Tak perlu khawatir tidak kebagian lapangan. Ribuan orang dapat berolahraga dengan tenang
-                            karena pesan lapangan dalam hitungan menit.
+                            karena bisa booking lapangan dalam hitungan menit.
                         </p>
                     </div>
                     <div>
@@ -251,7 +251,7 @@
     </section>
 
     <?php 
-    include "../ui/footer.php"
+    include "ui/footer.php"
     ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"

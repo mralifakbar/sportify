@@ -49,9 +49,6 @@
                         <a class="nav-link text-muted" aria-current="page" href="lapangan.php">Lapangan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-muted" href="user.php">User</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link text-muted" href="transaksi.php">Transaksi</a>
                     </li>
                 </ul>

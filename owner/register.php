@@ -16,7 +16,7 @@
     <div class="section-login mt-5 pt-2 container text-center">
         <div class="col-lg-6 mx-auto">
             <div class="logo mt-3">
-                <a href="">
+                <a href="../index.php">
                     <img src="../images/ball.svg" alt="Brand Icon" class="logo-brand">
                 </a>
             </div>
