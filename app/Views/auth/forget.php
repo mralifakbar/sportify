@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Sportify</title>
+    <title>Lupa Password - Sportify</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
@@ -21,21 +21,15 @@
                 </a>
             </div>
             <div class="login-greeting mt-3">
-                <h3 class="fw-bold fs-2">Selamat Datang Kembali!</h3>
-                <p>Tak usah buru-buru, login saja dulu</p>
+                <h3 class="fw-bold fs-2">Lupa Password</h3>
+                <p>Masukan email anda untuk mendapatkan link reset password</p>
             </div>
 
             <form action="" method="post" class="mt-4">
                 <input type="email" name="email" class="form-control w-75 mx-auto mb-3" id="loginEmail"
                     placeholder="Email">
-                <input type="password" name="password" class="form-control w-75 mx-auto" id="loginPassword"
-                    placeholder="Password">
-                <div class="w-75 mx-auto text-end mt-1 mb-3">
-                    <a href="forget">Lupa password?</a>
-                </div>
 
-                <input type="submit" value="Login" class="btn btn-primary w-75">
-                <p class="mt-3">Belum punya akun? <a href="register.php">Daftar sekarang</a></p>
+                <input type="submit" value="Reset Password" class="btn btn-primary w-75">
             </form>
         </div>
 

@@ -20,4 +20,8 @@ class Home extends BaseController
     {
         return view('templates/dashboard');
     }
+    public function forget()
+    {
+        return view('auth/forget');
+    }
 }
