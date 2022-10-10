@@ -23,7 +23,7 @@
                 <h3 class="fw-bold fs-2">Daftar untuk menjelajah</h3>
                 <p>Tak ribet untuk mendapat suatu kemudahan</p>
             </div>
-            <form action="" method="post" class="mt-4">
+            <form action="dashboard" method="get" class="mt-4">
                 <input type="email" name="email" class="form-control w-75 mx-auto mb-3" id="registerEmail" placeholder="Email">
                 <input type="text" maxlength="20" name="username" class="form-control w-75 mx-auto mb-3" id="registerUsername" placeholder="Username">
                 <input type="text" maxlength="30" name="fullname" class="form-control w-75 mx-auto mb-3" id="registerFullName" placeholder="Name Lengkap">

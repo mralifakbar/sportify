@@ -16,4 +16,8 @@ class Home extends BaseController
     {
         return view('auth/register');
     }
+    public function dashboard()
+    {
+        return view('templates/dashboard');
+    }
 }
