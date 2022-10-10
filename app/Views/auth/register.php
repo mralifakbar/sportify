@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar - Sportify</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link href="styles/main.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
     <link rel="shortcut icon" href="../assets/images/ball.svg" type="image/x-icon">
 </head>
 
