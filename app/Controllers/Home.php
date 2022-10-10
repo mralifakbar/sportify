@@ -16,4 +16,8 @@ class Home extends BaseController
     {
         return view('auth/register');
     }
+    public function forget()
+    {
+        return view('auth/forget');
+    }
 }
