@@ -26,8 +26,6 @@
             <form action="dashboard" method="get" class="mt-4">
                 <input type="email" name="email" class="form-control w-75 mx-auto mb-3" id="registerEmail" placeholder="Email">
                 <input type="text" maxlength="20" name="username" class="form-control w-75 mx-auto mb-3" id="registerUsername" placeholder="Username">
-                <input type="text" maxlength="30" name="fullname" class="form-control w-75 mx-auto mb-3" id="registerFullName" placeholder="Name Lengkap">
-                <input type="tel" maxlength="16" name="phonenumber" class="form-control w-75 mx-auto mb-3" id="registerPhone" placeholder="No. Handphone">
                 <input type="password" name="password" class="form-control w-75 mx-auto mb-3" id="registerPassword" placeholder="Password">
 
                 <input type="password" name="conpassword" class="form-control w-75 mx-auto" id="registerConPassword" placeholder="Konfirmasi Password">
