@@ -44,7 +44,7 @@
                 placeholder="Password" inputmode="password" autocomplete="current-password" required>
 
             <div class="w-75 mx-auto text-end mt-1 mb-3">
-                <a href="<?= url_to('magic-link') ?>">Lupa password?</a>
+                <a href="forget">Lupa password?</a>
             </div>
 
             <input type="submit" value="Login" class="btn btn-primary w-75">
