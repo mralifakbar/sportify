@@ -5,8 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sportify - Booking Lapangan Online</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
     <link rel="shortcut icon" href="../assets/images/ball.svg" type="image/x-icon">
 </head>
@@ -27,7 +28,8 @@
                 <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
                     <a href="login"
                         class="btn btn-outline-primary px-4 py-2 me-lg-2 ms-lg-auto mt-4 mt-lg-0 d-block d-lg-inline-block ">Masuk</a>
-                    <a href="register" class="btn btn-primary px-4 py-2 mt-3 mt-lg-0 d-block d-lg-inline-block">Daftar</a>
+                    <a href="register"
+                        class="btn btn-primary px-4 py-2 mt-3 mt-lg-0 d-block d-lg-inline-block">Daftar</a>
                 </div>
             </div>
         </nav>
@@ -164,7 +166,8 @@
                     <div class="row benefits">
                         <div class="col-md-4 mt-md-0">
                             <div class="rectangle mx-auto px-1">
-                                <img src="../assets/images/ic_signup.png" width="106" alt="benefits-1" class="img-fluid">
+                                <img src="../assets/images/ic_signup.png" width="106" alt="benefits-1"
+                                    class="img-fluid">
                                 <div class="headline-benefit">
                                     Daftar
                                 </div>
@@ -176,7 +179,8 @@
                         </div>
                         <div class="col-md-4 mt-5 mt-md-0">
                             <div class="rectangle mx-auto px-1">
-                                <img src="../assets/images/ic_booking.png" alt="benefits-1" class="img-fluid" width="106">
+                                <img src="../assets/images/ic_booking.png" alt="benefits-1" class="img-fluid"
+                                    width="106">
                                 <div class="headline-benefit">
                                     Booking Lapangan
                                 </div>

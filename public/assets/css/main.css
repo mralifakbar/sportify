@@ -6,7 +6,7 @@
 }
 
 * {
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: "Open Sans", sans-serif !important;
 }
 
 body {
@@ -66,11 +66,7 @@ body nav .navbar-nav .nav-link {
 body nav .navbar-nav .active {
   color: #080E09 !important;
   width: 100%;
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
   display: flex !important;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   margin: 0 30px;
 }
@@ -95,15 +91,13 @@ body #header {
     margin-bottom: 50px;
   }
 }
-
 .img-gym {
   border-radius: 20px;
   width: 300px !important;
 }
 
 .img-gym:hover {
-  -webkit-box-shadow: rgba(255, 148, 164, 0.8) 0px 8px 24px;
-          box-shadow: rgba(255, 148, 164, 0.8) 0px 8px 24px;
+  box-shadow: rgba(255, 148, 164, 0.8) 0px 8px 24px;
 }
 
 body .img-header {
@@ -125,7 +119,6 @@ body .explore {
     padding-bottom: 50px;
   }
 }
-
 body .explore .descript-explore {
   max-width: 75%;
 }
@@ -145,7 +138,6 @@ body .title h1 {
     font-size: 48px;
   }
 }
-
 body .stat {
   margin-top: 48px;
 }
@@ -160,7 +152,6 @@ body .stat h2 {
     font-size: 28px;
   }
 }
-
 body .stat p {
   font-size: 18px;
   color: #ADB2B8;
@@ -190,14 +181,12 @@ body .gallery {
     margin: 50px 0;
   }
 }
-
 body .gallery .card-hotel-carousel {
   width: 325px;
   margin-right: 64px;
   padding: 28px 28px 40px;
   border-radius: 28px;
   background: white;
-  -webkit-box-shadow: 20px 8px 18px rgba(178, 177, 255, 0.05);
   box-shadow: 20px 8px 18px rgba(178, 177, 255, 0.05);
 }
 
@@ -206,7 +195,6 @@ body .gallery .card-hotel-carousel {
     margin-right: 20px;
   }
 }
-
 body .gallery .card-hotel-carousel .image-placeholder {
   width: 268px;
   height: 190px;
@@ -266,7 +254,6 @@ body .gallery .card-hotel-carousel .bottom-text .rating img {
     height: 144.953px;
   }
 }
-
 body .text-content h1 {
   font-size: 60px !important;
   line-height: 150%;
@@ -341,14 +328,12 @@ body .content .content .benefits .rectangle {
   max-width: 302px;
   max-height: 334px;
   border: 1px solid var(--primary);
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 26px;
 }
 
 body .content .content .benefits .rectangle:hover {
-  -webkit-box-shadow: rgba(255, 148, 164, 0.2) 0px 8px 24px;
-          box-shadow: rgba(255, 148, 164, 0.2) 0px 8px 24px;
+  box-shadow: rgba(255, 148, 164, 0.2) 0px 8px 24px;
 }
 
 body .content .content .benefits .rectangle img {
@@ -393,7 +378,6 @@ body .content .content .button-header .btn-story {
   width: 150px;
   height: 50px;
   border: 1px solid #9BA8BE;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 8px;
   font-family: Poppins;
@@ -417,7 +401,6 @@ body .client {
     padding-bottom: 100px;
   }
 }
-
 body .client h1 {
   font-weight: 700;
   font-size: 30px;
@@ -430,9 +413,8 @@ body .client h1 {
     font-size: 48px !important;
   }
 }
-
 body .client .merriweather {
-  font-family: 'Times New Roman', Times, serif !important;
+  font-family: "Times New Roman", Times, serif !important;
   font-weight: 700;
   font-size: 20px;
   color: white;
@@ -474,7 +456,6 @@ body .client .client-img img {
     padding-top: 116px;
   }
 }
-
 body .cl-light {
   color: #EEEEEE;
 }
@@ -566,8 +547,7 @@ body footer li {
 }
 
 .choose-sport .card:hover {
-  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .recomendation-header span {
@@ -582,4 +562,9 @@ body footer li {
 .logout-menu {
   color: var(--primary) !important;
 }
-/*# sourceMappingURL=main.css.map */
+
+.body-full {
+  height: 100vh !important;
+}
+
+/*# sourceMappingURL=main.css.map *//*# sourceMappingURL=main.css.map */
