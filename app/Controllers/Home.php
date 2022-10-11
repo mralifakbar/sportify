@@ -2,6 +2,10 @@
 
 namespace App\Controllers;
 
+use Codeigniter\Shield\Auth;
+use CodeIgniter\Shield\Entities\User;
+use CodeIgniter\Shield\Models\UserModel;
+
 class Home extends BaseController
 {
     public function index()
@@ -14,10 +18,17 @@ class Home extends BaseController
     }
     public function register()
     {
+        
         return view('auth/register');
     }
     public function dashboard()
     {
+        // // dd(auth()->id());
+        // $userId = auth()->id();
+        // $data = [
+        //     'user' => User,
+        // ];
+        // return view('templates/dashboard', $userId);
         return view('templates/dashboard');
     }
     public function forget()

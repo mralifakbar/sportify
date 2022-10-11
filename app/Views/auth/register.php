@@ -6,7 +6,7 @@
 
 <div class="section-login container text-center">
     <div class="col-lg-6 mx-auto">
-        <div class="logo mt-3">
+        <div class="logo">
             <a href="">
                 <img src="../assets/images/ball.svg" alt="Brand Icon" class="logo-brand">
             </a>
