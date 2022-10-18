@@ -40,6 +40,7 @@ $routes->get('view', 'Home::view');
 // $routes->get('register', 'Home::register');
 $routes->get('dashboard', 'Home::dashboard');
 $routes->get('forget', 'Home::forget');
+$routes->get('explore', 'Home::explore');
 service('auth')->routes($routes);
 /*
  * --------------------------------------------------------------------

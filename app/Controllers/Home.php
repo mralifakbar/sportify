@@ -39,4 +39,9 @@ class Home extends BaseController
     {
         return view('auth/login');
     }
+
+    public function explore()
+    {
+        return view('booker/explore');
+    }
 }
