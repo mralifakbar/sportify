@@ -41,9 +41,14 @@ $routes->get('/', 'Home::index');
 $routes->get('view', 'Home::view');
 // $routes->get('register', 'Home::register');
 $routes->get('dashboard', 'Home::dashboard');
+<<<<<<< HEAD
+$routes->get('forget', 'Home::forget');
+$routes->get('explore', 'Home::explore');
+=======
 $routes->get('forget', 'Home::forget');
 $routes->get('test', 'Home::test');
 $routes->get('res', 'Home::res');
+>>>>>>> 7b2033685e5f48eeb25f95f70f05083c7bdc8ec9
 service('auth')->routes($routes);
 /*
  * --------------------------------------------------------------------

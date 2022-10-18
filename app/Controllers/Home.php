@@ -48,4 +48,9 @@ class Home extends BaseController
     {    
         dd($this->request->getGet());
     }
+
+    public function explore()
+    {
+        return view('booker/explore');
+    }
 }
