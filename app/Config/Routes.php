@@ -46,6 +46,9 @@ $routes->get('explore', 'Home::explore');
 $routes->get('forget', 'Home::forget');
 $routes->get('test', 'Home::test');
 $routes->get('res', 'Home::res');
+
+// $routes->get('forget', 'Home::forget');
+
 service('auth')->routes($routes);
 /*
  * --------------------------------------------------------------------
