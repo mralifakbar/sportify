@@ -43,6 +43,7 @@ $routes->get('view', 'Home::view');
 $routes->get('dashboard', 'Home::dashboard');
 $routes->get('forget', 'Home::forget');
 $routes->get('explore', 'Home::explore');
+$routes->get('search', 'Home::search');
 
 // $routes->get('forget', 'Home::forget');
 

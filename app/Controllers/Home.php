@@ -19,7 +19,7 @@ class Home extends BaseController
     }
     public function register()
     {
-        
+
         return view('auth/register');
     }
     public function dashboard()
@@ -45,12 +45,16 @@ class Home extends BaseController
         return view('testing');
     }
     public function res()
-    {    
+    {
         dd($this->request->getGet());
     }
 
     public function explore()
     {
         return view('booker/explore');
+    }
+    public function search()
+    {
+        return view('booker/search');
     }
 }
