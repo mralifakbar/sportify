@@ -42,6 +42,9 @@ $routes->get('dashboard', 'Home::dashboard');
 $routes->get('forget', 'Home::forget');
 $routes->get('explore', 'Home::explore');
 // $routes->get('forget', 'Home::forget');
+
+// $routes->get('forget', 'Home::forget');
+
 service('auth')->routes($routes);
 /*
  * --------------------------------------------------------------------
