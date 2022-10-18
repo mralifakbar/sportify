@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Sportify</title>
+    <title>Explore - Sportify</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
@@ -54,18 +54,17 @@
         <section class="booking-area">
             <div class="container text-center">
                 <h2 class="mt-5 mb-4 fs-1">Pilih Lapangan. Bayar Bookingan. Aman.</h2>
-                <form action="" method="post">
+                <form action="search" method="get">
                     <div class="row justify-content-center mt-4">
                         <div class="col-lg-3 mb-3 mb-lg-3">
-                            <select class="form-select" aria-label="Jenis olahraga">
-                                <option selected>Pilih jenis olahraga</option>
+                            <select class="form-select" aria-label="Jenis olahraga" required name="jenisOlahraga">
                                 <option value="Futsal">Futsal</option>
                                 <option value="Badminton">Badminton</option>
                                 <option value="Basket">Basket</option>
                             </select>
                         </div>
                         <div class="col-lg-3 mb-3 mb-lg-3">
-                            <input type="date" class="form-control" id="datebBooking" placeholder="name@example.com">
+                            <input type="date" class="form-control" id="datebBooking" required name="dateBook">
                         </div>
                         <div class="col-auto text-start mb-3 mb-lg-3">
                             <button type="submit" class="btn btn-primary">Cari Lapangan</button>
@@ -80,7 +79,7 @@
             <div class="container">
                 <div class="row justify-content-evenly">
                     <div class="col-md-6 col-lg-3 d-flex justify-content-center mb-3 mb-lg-3">
-                        <a href="">
+                        <a href="search?jenisOlahraga=Basket">
                             <div class="card" style="width: 18rem;">
                                 <img src="../assets/images/basketball.svg" class="card-img-top mx-auto mt-4"
                                     alt="Basketball">
@@ -91,7 +90,7 @@
                         </a>
                     </div>
                     <div class="col-md-6 col-lg-3 d-flex justify-content-center mb-3 mb-lg-3">
-                        <a href="">
+                        <a href="search?jenisOlahraga=Futsal">
                             <div class="card" style="width: 18rem;">
                                 <img src="../assets/images/futsal.svg" class="card-img-top mx-auto mt-4" alt="Futsal">
                                 <div class="card-body">
@@ -101,7 +100,7 @@
                         </a>
                     </div>
                     <div class="col-md-6 col-lg-3 d-flex justify-content-center">
-                        <a href="">
+                        <a href="search?jenisOlahraga=Badminton">
                             <div class="card" style="width: 18rem;">
                                 <img src="../assets/images/badminton.svg" class="card-img-top mx-auto mt-4"
                                     alt="Badminton">

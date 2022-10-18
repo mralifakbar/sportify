@@ -6,6 +6,7 @@ use CodeIgniter\HTTP\Request;
 use Codeigniter\Shield\Auth;
 use CodeIgniter\Shield\Entities\User;
 use CodeIgniter\Shield\Models\UserModel;
+use App\Models\Lapangan;
 
 class Home extends BaseController
 {
@@ -55,6 +56,25 @@ class Home extends BaseController
     }
     public function search()
     {
-        return view('booker/search');
+        $lapangan = new Lapangan();
+        // dd($this->request->getGet('jenisOlahraga'));
+        
+        $data = [
+            'all' => 0,
+            'jenis' => '',
+            'lapangan' => $lapangan->findAll()
+        ];
+
+        if ($this->request->getGet('jenisOlahraga') && $this->request->getGet('dateBook')) {
+            $data['jenis'] = $this->request->getGet('jenisOlahraga');
+            $data['tanggal'] = $this->request->getGet('dateBook');
+            $data['all'] = 1;
+            $data['lapangan'] = $lapangan->where('jenis', $this->request->getGet('jenisOlahraga'))->findAll();
+        } else if ($this->request->getGet('jenisOlahraga')) {
+            $data['jenis'] = $this->request->getGet('jenisOlahraga');
+            $data['lapangan'] = $lapangan->where('jenis', $this->request->getGet('jenisOlahraga'))->findAll();
+        }
+        // dd($data['lapangan'][0]);
+        return view('booker/search', $data);
     }
 }
