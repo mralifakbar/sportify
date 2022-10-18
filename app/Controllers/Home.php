@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use CodeIgniter\HTTP\Request;
 use Codeigniter\Shield\Auth;
 use CodeIgniter\Shield\Entities\User;
 use CodeIgniter\Shield\Models\UserModel;
@@ -38,6 +39,14 @@ class Home extends BaseController
     public function view()
     {
         return view('auth/login');
+    }
+    public function test()
+    {
+        return view('testing');
+    }
+    public function res()
+    {    
+        dd($this->request->getGet());
     }
 
     public function explore()

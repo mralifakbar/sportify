@@ -17,7 +17,8 @@
         </div>
 
         <?php if (session('error') !== null) : ?>
-        <div class="alert alert-danger w-75 mx-auto" role="alert"><?= session('error') ?></div>
+        <div class="alert alert-danger w-75 mx-auto" role="alert">
+            <?= session('error') ?></div>
         <?php elseif (session('errors') !== null) : ?>
         <div class="alert alert-danger" role="alert">
             <?php if (is_array(session('errors'))) : ?>
