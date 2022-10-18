@@ -25,12 +25,28 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <?php if(auth()->loggedIn()): ?>
+                <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+                    <div class="dropdown ms-lg-auto">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <?= auth()->user()->username; ?>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Ubah Profil</a></li>
+                            <li><a class="dropdown-item logout-menu" href="logout">Keluar</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <?php else: ?>
                 <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
                     <a href="login"
                         class="btn btn-outline-primary px-4 py-2 me-lg-2 ms-lg-auto mt-4 mt-lg-0 d-block d-lg-inline-block ">Masuk</a>
                     <a href="register"
                         class="btn btn-primary px-4 py-2 mt-3 mt-lg-0 d-block d-lg-inline-block">Daftar</a>
                 </div>
+                <?php endif; ?>
+
             </div>
         </nav>
 
@@ -66,7 +82,8 @@
                     <div class="col-md-6 col-lg-3 d-flex justify-content-center mb-3 mb-lg-3">
                         <a href="">
                             <div class="card" style="width: 18rem;">
-                                <img src="../assets/images/basketball.svg" class="card-img-top mx-auto mt-4" alt="Basketball">
+                                <img src="../assets/images/basketball.svg" class="card-img-top mx-auto mt-4"
+                                    alt="Basketball">
                                 <div class="card-body">
                                     <p class="card-text fs-2 text-center fw-bold">Basket</p>
                                 </div>
@@ -86,7 +103,8 @@
                     <div class="col-md-6 col-lg-3 d-flex justify-content-center">
                         <a href="">
                             <div class="card" style="width: 18rem;">
-                                <img src="../assets/images/badminton.svg" class="card-img-top mx-auto mt-4" alt="Badminton">
+                                <img src="../assets/images/badminton.svg" class="card-img-top mx-auto mt-4"
+                                    alt="Badminton">
                                 <div class="card-body">
                                     <p class="card-text fs-2 text-center fw-bold">Badminton</p>
                                 </div>
@@ -99,8 +117,8 @@
     </div>
 
 
-  
-    
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>

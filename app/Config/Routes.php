@@ -44,6 +44,8 @@ $routes->get('dashboard', 'Home::dashboard');
 $routes->get('forget', 'Home::forget');
 $routes->get('explore', 'Home::explore');
 $routes->get('search', 'Home::search');
+$routes->get('test', 'Home::test');
+$routes->get('res', 'Home::res');
 
 // $routes->get('forget', 'Home::forget');
 
