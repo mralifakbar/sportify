@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use CodeIgniter\HTTP\Request;
+
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
@@ -39,7 +41,9 @@ $routes->get('/', 'Home::index');
 $routes->get('view', 'Home::view');
 // $routes->get('register', 'Home::register');
 $routes->get('dashboard', 'Home::dashboard');
-// $routes->get('forget', 'Home::forget');
+$routes->get('forget', 'Home::forget');
+$routes->get('test', 'Home::test');
+$routes->get('res', 'Home::res');
 service('auth')->routes($routes);
 /*
  * --------------------------------------------------------------------
