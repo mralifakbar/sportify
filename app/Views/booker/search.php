@@ -72,7 +72,9 @@
 
             </div>
         </section>
-
+        <?php if (!$lapangan): ?>
+        <h1 class="text-center mt-5">Tidak Ada Lapangan</h1>
+        <?php endif; ?>
         <section class="basket-recomendation mt-3">
             <div class="container">
                 <!-- <h3 class="fw-bold">Basket</h3> -->

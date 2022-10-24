@@ -78,7 +78,7 @@
                         </p>
                     </div>
                     <div>
-                        <a href="" class="btn btn-primary mt-5 px-5 py-3 shadow">
+                        <a href="explore" class="btn btn-primary mt-5 px-5 py-3 shadow">
                             Cari Lapangan
                         </a>
                     </div>
