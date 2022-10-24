@@ -17,6 +17,7 @@ class Lapangan extends Seeder
                 'tipe_lantai' => 'Rumput Hijau',
                 'panjang' => '100 M',
                 'lebar' => '50 M',
+                'harga' => '50000',
                 'id_pengelola' => '0101'
 			],
 			[
@@ -27,6 +28,7 @@ class Lapangan extends Seeder
                 'tipe_lantai' => 'Semen Halus',
                 'panjang' => '500 M',
                 'lebar' => '300 M',
+                'harga' => '300000',
                 'id_pengelola' => '0201'
 			],
 			[
@@ -37,6 +39,7 @@ class Lapangan extends Seeder
                 'tipe_lantai' => 'Semen Kasar',
                 'panjang' => '75 M',
                 'lebar' => '30 M',
+                'harga' => '70000',
                 'id_pengelola' => '0102'
 			]
 		];
