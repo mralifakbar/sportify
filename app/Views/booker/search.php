@@ -5,8 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search - Sportify</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
     <link rel="shortcut icon" href="../assets/images/ball.svg" type="image/x-icon">
@@ -25,6 +23,7 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <?php if(auth()->loggedIn()): ?>
                 <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
                     <div class="dropdown ms-lg-auto">
@@ -55,63 +54,87 @@
                 <form action="search" method="get">
                     <div class="row justify-content-center mt-4">
                         <div class="col-lg-3 mb-3 mb-lg-3">
-                            <select class="form-select" aria-label="Jenis olahraga" required name="jenisOlahraga">
-                                <option value="Futsal">Futsal</option>
-                                <option value="Badminton">Badminton</option>
-                                <option value="Basket">Basket</option>
+                            <select class="form-select" aria-label="Jenis olahraga" required
+                                name="jenisOlahraga"><?php  ?>
+                                <option value="Futsal" <?php if ($jenis === 'Futsal') echo 'selected' ?>>Futsal</option>
+                                <option value="Badminton" <?php if ($jenis === 'Badminton') echo 'selected' ?>>Badminton
+                                </option>
+                                <option value="Basket" <?php if ($jenis === 'Basket') echo 'selected' ?>>Basket</option>
                             </select>
                         </div>
                         <div class="col-lg-3 mb-3 mb-lg-3">
-                            <input type="date" class="form-control" id="datebBooking" required name="dateBook">
+                            <input type="date" class="form-control" id="datebBooking" required name="dateBook"
+                                value="<?= $tanggal; ?>" min="<?= $tanggal; ?>">
                         </div>
                         <div class="col-auto text-start mb-3 mb-lg-3">
-                            <button type="submit" class="btn btn-primary">Cari Lapangan</button>
+                            <button type="submit" class="btn btn-primary">Ubah Pencarian</button>
                         </div>
                     </div>
                 </form>
 
             </div>
         </section>
+
         <?php if (!$lapangan): ?>
         <h1 class="text-center mt-5">Tidak Ada Lapangan</h1>
         <?php endif; ?>
+
         <section class="basket-recomendation mt-3">
             <div class="container">
                 <!-- <h3 class="fw-bold">Basket</h3> -->
                 <div class="row">
                     <div class="gallery row p-md-4 section scrolling-wrapper flex-row flex-nowrap">
                         <!-- CARD 1 -->
+                        <?php $bokarr = 0; ?>
                         <?php foreach($lapangan as $lp): ?>
                         <div class="card-hotel-carousel">
-                            <div class="image-placeholder">
-                                <img src="../assets/images/basket.jpeg" alt="images" />
-                            </div>
-                            <div class="card-details">
-                                <div class="caption"><?= $lp['nama_lapangan']; ?></div>
-                                <span class="sub-caption">150m</span>
-                            </div>
-                            <div class="bottom-text d-flex flex-row justify-content-between">
-                                <div class="price-content flex-grow-1">
-                                    <span>Mulai dari</span> <span class="price">Rp.100.000</span>
+                            <a href="login" class="text-decoration-none">
+                                <div class="image-placeholder">
+                                    <img src="../assets/images/basket.jpeg" alt="images" />
                                 </div>
-                                <div class="rating d-flex align-items-center">
-                                    <img src="../assets/images/star-yellow.svg" alt="star" />
-                                    <span>4.2</span>
+                                <div class="card-details">
+                                    <div class="caption"><?= $lp['nama_lapangan']; ?></div>
+                                    <span class="sub-caption">150m</span>
                                 </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col">
-                                    <a href="" class="btn btn-outline-secondary me-2 mb-2">10.00</a>
-                                    <a href="" class="btn btn-outline-secondary me-2 mb-2 ">11.00</a>
-                                    <a href="" class="btn btn-outline-secondary me-2 mb-2">12.00</a>
-                                    <a href="" class="btn btn-outline-secondary me-2 mb-2">13.00</a>
-                                    <a href="" class="btn btn-outline-secondary me-2 mb-2">14.00</a>
-                                    <a href="" class="btn btn-outline-secondary me-2 mb-2">15.00</a>
-                                    <a href="" class="btn btn-outline-secondary me-2 mb-2">16.00</a>
-                                    <a href="" class="btn btn-outline-secondary me-2 mb-2">17.00</a>
+                                <div class="bottom-text d-flex flex-row justify-content-between">
+                                    <div class="price-content flex-grow-1">
+                                        <?php helper('number');?>
+                                        <span>Mulai dari</span> <span class="price">Rp.
+                                            <?= number_format($lp['harga'],0,',','.') ?></span>
+                                    </div>
+                                    <div class="rating d-flex align-items-center">
+                                        <img src="../assets/images/star-yellow.svg" alt="star" />
+                                        <span>4.2</span>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <?php for($i = 7; $i <= 21; $i++) { ?>
+                                        <?php if (in_array($i, $booked[$bokarr])) {?>
+                                        <?php if ($i >= 7 && $i <= 9) { ?>
+                                        <a href="" class="btn btn-secondary me-2 mb-2 disabled" role="button"
+                                            tabindex="-1" aria-disabled="true">0<?= $i; ?>.00</a>
+                                        <?php } else {?>
+                                        <a href="" class="btn btn-secondary me-2 mb-2 disabled" role="button"
+                                            tabindex="-1" aria-disabled="true"><?= $i; ?>.00</a>
+                                        <?php } ?>
+                                        <?php } else { ?>
+                                        <?php if ($i >= 7 && $i <= 9) { ?>
+                                        <a href="" class="btn btn-outline-secondary me-2 mb-2" role="button"
+                                            tabindex="-1">0<?= $i; ?>.00</a>
+                                        <?php } else {?>
+                                        <a href="" class="btn btn-outline-secondary me-2 mb-2" role="button"
+                                            tabindex="-1"><?= $i; ?>.00</a>
+                                        <?php } ?>
+                                        <?php } ?>
+
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                            </a>
+
                         </div>
+                        <?php $bokarr++; ?>
                         <?php endforeach; ?>
                     </div>
                 </div>

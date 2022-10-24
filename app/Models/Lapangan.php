@@ -11,4 +11,9 @@ class Lapangan extends Model
     protected $useAutoIncrement = true;
     protected $protectFields    = false;
     // protected $allowedFields    = [];
+
+    public function checkAvail($date, $hour, $id) {
+        $transaksi = new Transaksi();
+        return $transaksi->where(array('tanggal' => $date, 'jam' => $hour, 'id_lapangan' => $id))->findAll();
+    }
 }
