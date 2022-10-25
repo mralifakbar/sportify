@@ -55,6 +55,10 @@ class Home extends BaseController
     {
         return view('booker/riwayat-transaksi');
     }
+    public function riwayatPembayaran()
+    {
+        return view('booker/riwayat-pembayaran');
+    }
 
 
     public function explore()
