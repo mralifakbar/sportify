@@ -12,15 +12,17 @@
     <title>Sportify - Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link href="..\assets\sb-admin-2\vendor\fontawesome-free\css\all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../assets/sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet">
+
     <!-- <link rel="stylesheet" href="../assets/css/bootstrap.css"> -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../assets/css/main.css"> -->
+    <link href="../assets/sb-admin-2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" rel="stylesheet"
+        rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="../assets/images/ball.svg" type="image/x-icon">
 </head>
 
@@ -33,7 +35,7 @@
         <ul class="navbar-nav bg-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="explore">
                 <div class="sidebar-brand-text mx-3">Sportify</div>
             </a>
 
@@ -41,8 +43,8 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+            <li class="nav-item <?php if ($path === 'dashboard') echo 'active' ?>">
+                <a class="nav-link" href="dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -56,14 +58,14 @@
             </div>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <li class="nav-item <?php if ($path === 'riwayat-transaksi') echo 'active' ?>">
                 <a class="nav-link" href="riwayat-transaksi">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Riwayat Transaksi</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <li class="nav-item <?php if ($path === 'riwayat-pembayaran') echo 'active' ?>">
                 <a class="nav-link" href="riwayat-pembayaran">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Riwayat Pembayaran</span></a>
@@ -255,13 +257,14 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Daffa Putra</span>
+                                <span
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small"><?= auth()->user()->username; ?></span>
                                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/100x100?man">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>

@@ -11,55 +11,66 @@ use App\Models\Transaksi;
 use CodeIgniter\I18n\Time;
 
 class Home extends BaseController
-{
+{ 
     public function index()
     {
         return view('landing_page');
     }
+    
     public function login()
     {
         return view('auth/login');
     }
+    
     public function register()
     {
 
         return view('auth/register');
     }
+
     public function dashboard()
     {
-        // // dd(auth()->id());
-        // $userId = auth()->id();
-        // $data = [
-        //     'user' => User,
-        // ];
-        // return view('templates/dashboard', $userId);
-        return view('templates/dashboard');
+        $data = [
+            'path' => $this->request->getPath(),
+        ];
+        return view('templates/dashboard', $data);
     }
+    
     public function forget()
     {
         return view('auth/forget');
     }
+
     public function view()
     {
         return view('auth/login');
     }
+    
     public function test()
     {
         return view('testing');
     }
+    
     public function res()
     {
         dd($this->request->getGet());
     }
+    
     public function riwayatTransaksi()
     {
-        return view('booker/riwayat-transaksi');
-    }
-    public function riwayatPembayaran()
-    {
-        return view('booker/riwayat-pembayaran');
+        $data = [
+            'path' => $this->request->getPath(),
+        ];
+        return view('booker/riwayat-transaksi', $data);
     }
 
+    public function riwayatPembayaran()
+    {
+        $data = [
+            'path' => $this->request->getPath(),
+        ];
+        return view('booker/riwayat-pembayaran', $data);
+    }
 
     public function explore()
     {
@@ -69,6 +80,7 @@ class Home extends BaseController
         ];
         return view('booker/explore', $data);
     }
+
     public function search()
     {
         $lapangan = new Lapangan();

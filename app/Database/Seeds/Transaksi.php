@@ -12,6 +12,7 @@ class Transaksi extends Seeder
         $data = [
             [
                 'id_lapangan' => 1,
+                'id_user' => 1,
                 'tanggal' => '2022-11-21',
                 'jam' => '10',
                 'durasi' => '1',
@@ -20,6 +21,7 @@ class Transaksi extends Seeder
             ],
             [
                 'id_lapangan' => 2,
+                'id_user' => 2,
                 'tanggal' => '2022-11-21',
                 'jam' => '12',
                 'durasi' => '2',
@@ -28,6 +30,7 @@ class Transaksi extends Seeder
             ],
             [
                 'id_lapangan' => 3,
+                'id_user' => 3,
                 'tanggal' => '2022-11-21',
                 'jam' => '14',
                 'durasi' => '3',

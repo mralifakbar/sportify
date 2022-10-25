@@ -66,7 +66,7 @@ class Lapangan extends Migration
             'updated_at' => [
                 'type' => 'datetime',
                 'null' => TRUE
-            ]
+            ],
         ]);
 
         $this->forge->addKey('id', TRUE);

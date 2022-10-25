@@ -20,6 +20,11 @@ class Transaksi extends Migration
                 'constraint' => '5',
                 'null' => false,
             ],
+            'id_user' => [
+                'type'       => 'INT',
+                'constraint' => '5',
+                'null' => false,
+            ],
             'tanggal' => [
                 'type' => 'DATE',
                 'null' => false,
