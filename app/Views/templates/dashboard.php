@@ -286,8 +286,8 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
-                </div>   
+                    <h1>Test</h1>
+                </div>
             </div>
             <!-- End of Main Content -->
 

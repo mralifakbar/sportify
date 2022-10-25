@@ -50,6 +50,7 @@ $routes->get('res', 'Home::res');
 // $routes->get('forget', 'Home::forget');
 
 service('auth')->routes($routes);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

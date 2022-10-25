@@ -107,31 +107,36 @@
                                         <span>4.2</span>
                                     </div>
                                 </div>
-                                <div class="row mt-3">
-                                    <div class="col">
+                            </a>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <form action="booking" method="post">
                                         <?php for($i = 7; $i <= 21; $i++) { ?>
                                         <?php if (in_array($i, $booked[$bokarr])) {?>
                                         <?php if ($i >= 7 && $i <= 9) { ?>
-                                        <a href="" class="btn btn-secondary me-2 mb-2 disabled" role="button"
-                                            tabindex="-1" aria-disabled="true">0<?= $i; ?>.00</a>
+                                        <button type="submit" class="btn btn-secondary me-2 mb-2" role="button"
+                                            tabindex="10" disabled>0<?= $i; ?>.00</button>
                                         <?php } else {?>
-                                        <a href="" class="btn btn-secondary me-2 mb-2 disabled" role="button"
-                                            tabindex="-1" aria-disabled="true"><?= $i; ?>.00</a>
+                                        <button type="submit" class="btn btn-secondary me-2 mb-2" role="button"
+                                            tabindex="10" disabled><?= $i; ?>.00
+                                        </button>
                                         <?php } ?>
                                         <?php } else { ?>
                                         <?php if ($i >= 7 && $i <= 9) { ?>
-                                        <a href="" class="btn btn-outline-secondary me-2 mb-2" role="button"
-                                            tabindex="-1">0<?= $i; ?>.00</a>
+                                        <button type="submit" class="btn btn-outline-secondary me-2 mb-2" role="button"
+                                            tabindex="-1">0<?= $i; ?>.00
+                                        </button>
                                         <?php } else {?>
-                                        <a href="" class="btn btn-outline-secondary me-2 mb-2" role="button"
-                                            tabindex="-1"><?= $i; ?>.00</a>
+                                        <button type="submit" class="btn btn-outline-secondary me-2 mb-2" role="button"
+                                            tabindex="-1"><?= $i; ?>.00
+                                        </button>
                                         <?php } ?>
                                         <?php } ?>
 
                                         <?php } ?>
-                                    </div>
+                                    </form>
                                 </div>
-                            </a>
+                            </div>
 
                         </div>
                         <?php $bokarr++; ?>
