@@ -51,6 +51,11 @@ class Home extends BaseController
     {
         dd($this->request->getGet());
     }
+    public function riwayatTransaksi()
+    {
+        return view('booker/riwayat-transaksi');
+    }
+
 
     public function explore()
     {
