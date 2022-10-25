@@ -19,7 +19,9 @@
 
     <!-- Custom styles for this template-->
     <link href="../assets/sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet">
-
+    <!-- <link rel="stylesheet" href="../assets/css/bootstrap.css"> -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+    <link rel="shortcut icon" href="../assets/images/ball.svg" type="image/x-icon">
 </head>
 
 <body id="page-top">
@@ -55,7 +57,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="riwayat-transaksi">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Riwayat Transaksi</span></a>
             </li>
@@ -286,7 +288,7 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h1>Test</h1>
+                    <?= $this->renderSection('content')?>
                 </div>
             </div>
             <!-- End of Main Content -->
