@@ -32,7 +32,7 @@
                             <?= auth()->user()->username; ?>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">Ubah Profil</a></li>
+                            <li><a class="dropdown-item" href="dashboard">Dashboard</a></li>
                             <li><a class="dropdown-item logout-menu" href="logout">Keluar</a></li>
                         </ul>
                     </div>
