@@ -18,7 +18,7 @@ class Lapangan extends Seeder
                 'panjang' => '100 M',
                 'lebar' => '50 M',
                 'harga' => '50000',
-                'id_pengelola' => '0101'
+                'id_pengelola' => '1'
 			],
 			[
                 'nama_lapangan' => 'Gelora Bung Karno',
@@ -29,7 +29,7 @@ class Lapangan extends Seeder
                 'panjang' => '500 M',
                 'lebar' => '300 M',
                 'harga' => '300000',
-                'id_pengelola' => '0201'
+                'id_pengelola' => '1'
 			],
 			[
                 'nama_lapangan' => 'Dino',
@@ -40,7 +40,7 @@ class Lapangan extends Seeder
                 'panjang' => '75 M',
                 'lebar' => '30 M',
                 'harga' => '70000',
-                'id_pengelola' => '0102'
+                'id_pengelola' => '1'
 			]
 		];
 
