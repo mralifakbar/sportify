@@ -54,6 +54,10 @@ class Lapangan extends Migration
                 'constraint' => 255,
                 'null' => FALSE,
             ],
+            'deskripsi' => [
+                'type' => 'TEXT',
+                'null' => FALSE,
+            ],
             'id_pengelola' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
