@@ -47,7 +47,7 @@ $routes->get('explore', 'Home::explore');
 $routes->get('search', 'Home::search');
 $routes->get('test', 'Home::test');
 $routes->get('res', 'Home::res');
-$routes->get('riwayat-transaksi', 'Home::riwayatTransaksi');
+$routes->get('riwayat-transaksi', 'Home::riwayattransaksi');
 $routes->get('riwayat-pembayaran', 'Home::riwayatPembayaran');
 
 // $routes->get('forget', 'Home::forget');

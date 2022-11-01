@@ -15,42 +15,24 @@
                         <th>Tanggal Penyewaan</th>
                         <th>Jam Penyewaan</th>
                         <th>Durasi</th>
-                        <th>Status</th>
+                        <!-- <th>Status</th> -->
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Lapangan Gor Saburai</td>
-                        <td>Lapangan Futsal</td>
-                        <td>2022-11-21</td>
-                        <td>14.00</td>
-                        <td>2 jam</td>
-                        <td>Sedang Berlangsung</td>
-                    </tr>
-                    <tr>
-                        <td>Lapangan Kemiling Raya</td>
-                        <td>Lapangan Basket</td>
-                        <td>2022-10-11</td>
-                        <td>08.00</td>
-                        <td>3 jam</td>
-                        <td>Sudah Selesai</td>
-                    </tr>
-                    <tr>
-                        <td>Lapangan Xbadmin </td>
-                        <td>Lapangan Badminton</td>
-                        <td>2022-11-23</td>
-                        <td>08.00</td>
-                        <td>1 jam</td>
-                        <td>Sudah Selesai</td>
-                    </tr>
-                    <tr>
-                        <td>Lapangan Gor Sudirman</td>
-                        <td>Lapangan Futsal</td>
-                        <td>2022-10-21</td>
-                        <td>21.00</td>
-                        <td>2 jam</td>
-                        <td>Sudah Selesai</td>
-                    </tr>
+                <?php
+                foreach ($transaksi as $trans) {
+                ?>
+                <tr>
+                    <td><?php echo $trans['nama_lapangan']; ?></td>
+                    <td><?php echo $trans['tipe_lapangan']; ?></td>
+                    <td><?php echo $trans['tanggal']; ?></td>
+                    <td><?php echo $trans['jam']; ?></td>
+                    <td><?php echo $trans['durasi']; ?></td>
+
+                </tr>
+                <?php
+                }
+                ?>
                 </tbody>
             </table>
         </div>

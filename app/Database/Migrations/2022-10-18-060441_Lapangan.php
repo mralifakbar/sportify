@@ -11,69 +11,69 @@ class Lapangan extends Migration
         $this->forge->addField([
             'id' => [
                 'type' => 'INT',
-                'unsigned' => TRUE,
-                'auto_increment' => TRUE
+                'unsigned' => true,
+                'auto_increment' => true
             ],
             'nama_lapangan' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
-                'null' => FALSE,
+                'null' => false,
             ],
             'jenis' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
-                'null' => FALSE,
+                'null' => false,
             ],
             'lokasi' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
-                'null' => FALSE,
+                'null' => false,
             ],
             'tipe_lapangan' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
-                'null' => FALSE,
+                'null' => false,
             ],
             'tipe_lantai' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
-                'null' => FALSE,
+                'null' => false,
             ],
             'panjang' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
-                'null' => FALSE,
+                'null' => false,
             ],
             'lebar' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
-                'null' => FALSE,
+                'null' => false,
             ],
             'harga' => [
                 'type' => 'INT',
                 'constraint' => 255,
-                'null' => FALSE,
+                'null' => false,
             ],
             'deskripsi' => [
                 'type' => 'TEXT',
-                'null' => FALSE,
+                'null' => false,
             ],
             'id_pengelola' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
-                'null' => FALSE,
+                'null' => false,
             ],
             'created_at' => [
                 'type' => 'datetime',
-                'null' => TRUE
+                'null' => true
             ],
             'updated_at' => [
                 'type' => 'datetime',
-                'null' => TRUE
+                'null' => true
             ],
         ]);
 
-        $this->forge->addKey('id', TRUE);
+        $this->forge->addKey('id', true);
         $this->forge->createTable('lapangan');
     }
 
