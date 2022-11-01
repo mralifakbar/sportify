@@ -136,9 +136,11 @@ class Home extends BaseController
         // dd($data['booked']);
         return view('booker/search', $data);
     }
-
-    public function transaksi()
+    public function detail()
     {
-        
+        $data = [
+            'path' => $this->request->getPath(),
+        ];
+        return view('booker/detail', $data);
     }
 }
