@@ -58,9 +58,17 @@ class Home extends BaseController
     
     public function riwayatTransaksi()
     {
+        $lapangan = new Lapangan();
+        $transaksi = new Transaksi();
+        
         $data = [
+            'lapangan' => $lapangan->findAll(),
+            'transaksi' => $transaksi->getDataLapangan(),
             'path' => $this->request->getPath(),
         ];
+
+        // dd($data['transaksi']);
+
         return view('booker/riwayat-transaksi', $data);
     }
 
@@ -127,5 +135,10 @@ class Home extends BaseController
         }
         // dd($data['booked']);
         return view('booker/search', $data);
+    }
+
+    public function transaksi()
+    {
+        
     }
 }
