@@ -37,6 +37,24 @@ class Transaksi extends Seeder
                 'total_pembayaran' => '210000',
                 'created_at' => Time::now(),
             ],
+            [
+                'id_lapangan' => 3,
+                'id_user' => 2,
+                'tanggal' => '2022-11-1',
+                'jam' => '14',
+                'durasi' => '3',
+                'total_pembayaran' => '210000',
+                'created_at' => Time::now(),
+            ],
+            [
+                'id_lapangan' => 3,
+                'id_user' => 3,
+                'tanggal' => '2022-10-2',
+                'jam' => '14',
+                'durasi' => '3',
+                'total_pembayaran' => '210000',
+                'created_at' => Time::now(),
+            ],
         ];
 
         foreach($data as $dt) {
