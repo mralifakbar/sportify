@@ -41,7 +41,7 @@
                         <td>2022-11-23</td>
                         <td>08.00</td>
                         <td>1 jam</td>
-                        <td>Sedang Berlangsung</td>
+                        <td>Sudah Selesai</td>
                     </tr>
                     <tr>
                         <td>Lapangan Gor Sudirman</td>
