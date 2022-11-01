@@ -61,13 +61,24 @@ class Home extends BaseController
         $lapangan = new Lapangan();
         $transaksi = new Transaksi();
         
+        $datetime = Time::now();
+        date_format($datetime,"Y-m-d");
+
+        $date = date_parse($datetime);
+        if ($date['day'] <= 9){
+            $datee = $date['year'].'-'.$date['month'].'-0'.$date['day'];
+        }else{
+            $datee = $date['year'].'-'.$date['month'].'-'.$date['day'];
+        }
+
         $data = [
             'lapangan' => $lapangan->findAll(),
             'transaksi' => $transaksi->getDataLapangan(),
             'path' => $this->request->getPath(),
+            'time' => $datee,
         ];
 
-        // dd($data['transaksi']);
+    // dd($data['time']);
 
         return view('booker/riwayat-transaksi', $data);
     }
