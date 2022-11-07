@@ -143,4 +143,9 @@ class Home extends BaseController
         ];
         return view('booker/detail', $data);
     }
+
+    public function konfirmasiPemesanan()
+    {
+        return view('booker/konfirmasi-pemesanan');
+    }
 }
