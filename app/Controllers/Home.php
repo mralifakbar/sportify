@@ -61,13 +61,24 @@ class Home extends BaseController
         $lapangan = new Lapangan();
         $transaksi = new Transaksi();
         
+        $datetime = Time::now();
+        date_format($datetime,"Y-m-d");
+
+        $date = date_parse($datetime);
+        if ($date['day'] <= 9){
+            $datee = $date['year'].'-'.$date['month'].'-0'.$date['day'];
+        }else{
+            $datee = $date['year'].'-'.$date['month'].'-'.$date['day'];
+        }
+
         $data = [
             'lapangan' => $lapangan->findAll(),
             'transaksi' => $transaksi->getDataLapangan(),
             'path' => $this->request->getPath(),
+            'time' => $datee,
         ];
 
-        // dd($data['transaksi']);
+    // dd($data['time']);
 
         return view('booker/riwayat-transaksi', $data);
     }
@@ -96,15 +107,16 @@ class Home extends BaseController
         
         // dd($this->request->getGet('jenisOlahraga'));
         // dd(Time::now());
-        $datetime = date_parse(Time::now());
+        // $datetime = date_parse(Time::tomorrow());
         // dd($datetime);
         $data = [
             'all' => 0,
             'jenis' => '',
             'lapangan' => $lapangan->findAll(),
-            'tanggal' => $datetime['year'].'-'.$datetime['month'].'-'.$datetime['day'],
+            'tanggal' => date_format(Time::tomorrow(), "Y-m-d"),
+            'tanggalnow' => date_format(Time::now(), "Y-m-d")
         ];
-
+        // dd($data['tanggal']);
         if ($this->request->getGet('jenisOlahraga') && $this->request->getGet('dateBook')) {
             $data['jenis'] = $this->request->getGet('jenisOlahraga');
             $data['tanggal'] = $this->request->getGet('dateBook');
@@ -133,19 +145,67 @@ class Home extends BaseController
             
             $data['booked'][] = $bookedField;
         }
-        // dd($data['booked']);
+        // dd();
         return view('booker/search', $data);
     }
-    public function detail()
+    public function detailLapangan($id)
     {
+        // dd($id);
+        $lapangan = new Lapangan();
+        // dd($lapangan->where('id', $id)->find());
         $data = [
             'path' => $this->request->getPath(),
+            'lapangan' => $lapangan->where('id', $id)->find()[0],
+            'tanggal' => date_format(Time::tomorrow(), "Y-m-d"),
+            'tanggalnow' => date_format(Time::now(), "Y-m-d")
         ];
+
+        if ($this->request->getGet('dateBook')) {
+            $data['tanggal'] = $this->request->getGet('dateBook');
+        }
+
+        // dd($data['lapangan']);
         return view('booker/detail', $data);
     }
 
     public function konfirmasiPemesanan()
     {
         return view('booker/konfirmasi-pemesanan');
+    }
+
+    public function pesanLapangan($id)
+    {
+        // dd($id);
+        $lapangan = new Lapangan();
+        // dd($lapangan->where('id', $id)->find());
+        $data = [
+            'path' => $this->request->getPath(),
+            'lapangan' => $lapangan->where('id', $id)->find()[0],
+            'tanggal' => date_format(Time::tomorrow(), "Y-m-d"),
+            'tanggalnow' => date_format(Time::now(), "Y-m-d")
+        ];
+
+        if ($this->request->getGet('dateBook')) {
+            $data['tanggal'] = $this->request->getGet('dateBook');
+        }
+
+        $data['booked'] = [];
+        // dd($data['lapangan']);
+        $bookedField = array();
+        for ($i = 7; $i <= 21; $i++) {
+            $available = $lapangan->checkAvail($data['tanggal'], $i, $data["lapangan"]["id"]);
+            if ($available) {
+                for ($j = $i; $j < $available[0]['durasi'] + $i; $j++) {
+                    $bookedField[] = $j;
+                }
+            } else {
+                
+            }
+
+        } 
+
+        $data['booked'][] = $bookedField;
+        
+        return view('booker/pesan', $data);
     }
 }

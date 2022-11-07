@@ -88,7 +88,7 @@
                         <?php $bokarr = 0; ?>
                         <?php foreach($lapangan as $lp): ?>
                         <div class="card-hotel-carousel">
-                            <a href="login" class="text-decoration-none">
+                            <a href="/detail/<?= $lp['id']; ?>?dateBook=<?= $tanggal; ?>" class="text-decoration-none">
                                 <div class="image-placeholder">
                                     <img src="../assets/images/basket.jpeg" alt="images" />
                                 </div>

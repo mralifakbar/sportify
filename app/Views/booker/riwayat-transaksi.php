@@ -1,5 +1,7 @@
+
 <?= $this->extend('templates/dashboard') ?>
 <?= $this->section('content') ?>
+
 <h1>RIWAYAT TRANSAKSI PENYEWAAN</h1>
 <div class="card shadow my-4">
     <div class="card-header py-3">
@@ -15,7 +17,7 @@
                         <th>Tanggal Penyewaan</th>
                         <th>Jam Penyewaan</th>
                         <th>Durasi</th>
-                        <!-- <th>Status</th> -->
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,6 +30,13 @@
                     <td><?php echo $trans['tanggal']; ?></td>
                     <td><?php echo $trans['jam']; ?></td>
                     <td><?php echo $trans['durasi']; ?></td>
+                    <td><?php if ($trans['tanggal'] > $time):?>
+                            Akan Datang
+                        <?php elseif ($trans['tanggal'] == $time): ?>
+                            Sedang Berlangsung
+                        <?php else: ?>
+                            Sudah Selesai
+                        <?php endif; ?></td>
 
                 </tr>
                 <?php
