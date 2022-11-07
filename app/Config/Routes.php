@@ -49,6 +49,7 @@ $routes->get('test', 'Home::test');
 $routes->get('res', 'Home::res');
 $routes->get('riwayat-transaksi', 'Home::riwayattransaksi');
 $routes->get('riwayat-pembayaran', 'Home::riwayatPembayaran');
+$routes->get('konfirmasi-pembayaran', 'Home::konfirmasiPembayaran');
 $routes->get('detail/(:num)', 'Home::detailLapangan/$1');
 $routes->get('order/(:num)', 'Home::pesanLapangan/$1');
 

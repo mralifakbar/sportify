@@ -208,4 +208,8 @@ class Home extends BaseController
         
         return view('booker/pesan', $data);
     }
+    public function konfirmasiPembayaran()
+    {
+        return view('booker/konfirmasi-pembayaran');
+    }
 }
