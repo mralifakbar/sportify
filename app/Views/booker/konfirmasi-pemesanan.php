@@ -108,14 +108,9 @@
                         </div>
                     </div>
                 </div>
-
-                <form action="/konfirmasi-pembayaran" method="post">
-                    <button type="submit" href="" class="btn btn-danger py-2 fs-5 mt-5 w-100">Konfirmasi
-                        Pemesanan</button>
-                </form>
-
+                <a href="/konfirmasi-pembayaran" class="btn btn-danger mt-5">Konfirmasi Pemesanan</a>
             </div>
-            <div class="" style="height: 150px;"></div>
+
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
                 crossorigin="anonymous">
