@@ -55,6 +55,7 @@ $routes->get('detail/(:num)', 'Home::detailLapangan/$1');
 $routes->get('order/(:num)', 'Home::pesanLapangan/$1');
 $routes->post('belom', 'Home::belom');
 $routes->get('belom', 'Home::belom');
+$routes->post('bayar', 'Home::bayar');
 
 // $routes->get('forget', 'Home::forget');
 

@@ -8,7 +8,7 @@ use CodeIgniter\Shield\Entities\User;
 use CodeIgniter\Shield\Models\UserModel;
 use App\Models\Lapangan;
 use App\Models\Transaksi;
-use App\Models\DetailCostumer;
+use App\Models\DetailCustomer;
 use CodeIgniter\I18n\Time;
 
 class Home extends BaseController
@@ -249,6 +249,7 @@ class Home extends BaseController
             'tanggal' => $this->request->getPost()["tanggal"],
             'tipe' => $this->request->getPost()["tipe"],
             'jam' => $jam,
+            'id' => $this->request->getPost()["id"],
             'total' => $this->request->getPost()["total"],
             // 'tanggal' => $this->request->getPost()['tanggal'],
             'tanggalnow' => date_format(Time::now(), "Y-m-d")
@@ -277,5 +278,23 @@ class Home extends BaseController
             "keterangan" => $this->request->getPost('inputKeterangan')
         ]);
         return redirect('/konfirmasi-pembayaran');
+    }
+
+    public function bayar()
+    {
+        $transaksi = new Transaksi();
+        $data = [
+                'id_lapangan' => $this->request->getPost("id"),
+                'id_user' => auth()->user()->id,
+                'tanggal' => $this->request->getPost("tanggal"),
+                'jam' => $this->request->getPost("jam"),
+                'durasi' => $this->request->getPost("durasi"),
+                'total_pembayaran' => $this->request->getPost("total"),
+                'created_at' => Time::now(),
+            ];
+            // dd($data);
+        $transaksi->insert($data);
+        
+        return redirect()->to('/riwayat-transaksi');
     }
 }

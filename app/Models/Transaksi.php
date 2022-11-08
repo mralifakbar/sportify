@@ -25,7 +25,7 @@ class Transaksi extends Model
     public function getDataLapangan()
     {
         $builder = $this->db->table('transaksi')->where('id_user', auth()->user()->id);
-        $builder->join('lapangan', 'lapangan.id = transaksi.id');
+        $builder->join('lapangan', 'lapangan.id = transaksi.id_lapangan');
         $query = $builder->get()->getResultArray();
 
         return $query;

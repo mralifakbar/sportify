@@ -67,7 +67,15 @@
                 </div>
             </div>
 
-            <form class="row mt-5" method="POST" action="/dashboard/riwayat-transaksi">
+            <form class="row mt-5" method="POST" action="/bayar">
+                <input type="hidden" name="id" value="<?= $id; ?>">
+                <input type="hidden" name="lapangan" value="<?= $lapangan; ?>">
+                <input type="hidden" name="tipe" value="<?= $tipe; ?>">
+                <input type="hidden" name="tanggal" value="<?= $tanggal; ?>">
+                <input type="hidden" name="jam" value="<?= $jam[0]; ?>">
+                <input type="hidden" name="durasi" value="<?= sizeof($jam); ?>">
+                <input type="hidden" name="total" value="<?= $total + 5000 ?>">
+
                 <div class="col">
                     <div class="card p-5">
                         <p class="fw-bold fs-3 text-danger">Detail Customer</p>
@@ -75,19 +83,19 @@
 
                             <label for="inputNama" class="form-label">Nama</label>
                             <input type="text" class="form-control" value="<?= old('nama'); ?>" id="inputNama"
-                                placeholder="Nama lengkap" style="height:60px">
+                                placeholder="Nama lengkap" style="height:60px" name="inputNama">
 
                             <label for="inputNumber" class="form-label mt-3">Phone</label>
                             <input type="text" class="form-control" value="<?= old('phone'); ?>" id="inputNumber"
-                                placeholder="Nomor Telepon" style="height:60px">
+                                placeholder="Nomor Telepon" style="height:60px" name="inputNumber">
 
                             <label for="inputAddress" class="form-label mt-3">Alamat</label>
                             <input type="text" class="form-control" value="<?= old('alamat'); ?>" id="inputAddress"
-                                placeholder="Alamat lengkap" style="height:60px">
+                                placeholder="Alamat lengkap" style="height:60px" name="inputAddress">
 
                             <label for="inputKeterangan" class="form-label mt-3">Keterangan</label>
                             <input type="text" class="form-control" value="<?= old('keterangan'); ?>"
-                                id="inputKeterangan" placeholder="Apartment, studio, or floor" style="height:60px">
+                                name="inputKeterangan" id="inputKeterangan" placeholder="" style="height:60px">
 
 
                             <div class="form-check mt-3">

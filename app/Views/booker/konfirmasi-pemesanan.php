@@ -122,7 +122,8 @@
                     ?>
                     <input type="hidden" name="jam" value="<?= $dataJam; ?>">
                     <input type="hidden" name="total" value="<?= $lapangan['harga'] * sizeof($jam); ?>">
-                    <button type="submit" class="btn btn-danger mt-5 w-100">Konfirmasi Pemesanan</button>
+                    <input type="hidden" name="id" value="<?= $id ?>">
+                    <button type=" submit" class="btn btn-danger mt-5 w-100">Konfirmasi Pemesanan</button>
                 </form>
 
             </div>
