@@ -170,6 +170,7 @@ class Home extends BaseController
 
     public function konfirmasiPemesanan()
     {
+
         return view('booker/konfirmasi-pemesanan');
     }
 
@@ -211,5 +212,19 @@ class Home extends BaseController
     public function konfirmasiPembayaran()
     {
         return view('booker/konfirmasi-pembayaran');
+    }
+
+    public function detailCustomer()
+    {
+        $detailCustomer = new DetailCustomer();
+        $transaksi = new Transaksi();
+
+        $data = $detailCustomer->insert([
+            "nama" => $this->request->getPost('inputNama'),
+            "phone" => $this->request->getPost('inputNumber'),
+            "alamat" => $this->request->getPost('inputAddress'),
+            "keterangan" => $this->request->getPost('inputKeterangan')
+        ]);
+        return redirect('/konfirmasi-pembayaran');
     }
 }

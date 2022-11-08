@@ -64,7 +64,7 @@
 
             <div class="row">
                 <div class="col">
-                    <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
+                    <input type="checkbox" class="btn-check" id="btn-check-outline" autocomplete="off">
 
                     <p class="fs-3 text-center fw-bold mt-3">Tanggal: <span
                             class="text-danger"><?= date('j F Y', strtotime($tanggal)) ?></span></p>
@@ -75,6 +75,7 @@
                     </div>
 
                     <div class="row">
+                    
                         <?php $selected = 0; ?>
 
                         <?php $bokarr = 0; ?>
@@ -82,61 +83,82 @@
                             <?php for($i = 7; $i <= 21; $i++) { ?>
                             <?php if (in_array($i, $booked[$bokarr])) {?>
                             <?php if ($i >= 7 && $i <= 9) { ?>
-                            <div class="col-lg-2 mb-3">
+                                <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
+                                <label class="btn btn-outline-secondary" for="btn-check-2-outlined">
+                                <div class="col-lg-2 mb-3">
                                 <a class="text-decoration-none text-light fw-bold" aria-disabled="true"
                                     style="cursor: not-allowed">
-                                    <div class="card rounded-4  text-center py-3 bg-secondary">
-                                        <p class="fs-4 bi bi-calendar-check-fill"></p>
-                                        <p class="p-0 m-0 ">0<?= $i; ?>.00-0<?= $i+1; ?>.00</p>
-                                        <p class="p-0 m-0 fs-4"><?= number_format($lapangan['harga'],0,',','.'); ?>
-                                            <?php $selected = $i; ?>
-                                        </p>
-                                        <p class="p-0 m-0 fw-bold">Booked</p>
-                                    </div>
+                                        <div class="card rounded-4  text-center py-3 bg-secondary">
+                                            <p class="fs-4 bi bi-calendar-check-fill"></p>
+                                            <p class="p-0 m-0 ">0<?= $i; ?>.00-0<?= $i+1; ?>.00</p>
+                                            <p class="p-0 m-0 fs-4"><?= number_format($lapangan['harga'],0,',','.'); ?>
+                                                <?php $selected = $i; ?>
+                                            </p>
+                                            <p class="p-0 m-0 fw-bold">Booked</p>
+                                        </div>
                                 </a>
-                            </div>
+                                 </div>
+                                </label>
+                            
                             <?php } else {?>
-                            <div class="col-lg-2 mb-3">
-                                <a class="text-decoration-none text-light fw-bold" aria-disabled="true"
-                                    style="cursor: not-allowed">
-                                    <div class="card rounded-4  text-center py-3 bg-secondary">
-                                        <p class="fs-4 bi bi-calendar-check-fill"></p>
-                                        <p class="p-0 m-0 "><?= $i; ?>.00-<?= $i+1; ?>.00</p>
-                                        <p class="p-0 m-0 fs-4"><?= number_format($lapangan['harga'],0,',','.'); ?>
-                                        </p>
-                                        <?php $selected = $i; ?>
-                                        <p class="p-0 m-0 fw-bold">Booked</p>
+                                <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
+                                <label class="btn btn-outline-secondary" for="btn-check-2-outlined">
+                                    <div class="col-lg-2 mb-3">
+                                    <a class="text-decoration-none text-light fw-bold" aria-disabled="true"
+                                        style="cursor: not-allowed">
+                                        <label class="btn btn-outline-secondary" for="btn-check-2-outlined">
+                                            <div class="card rounded-4  text-center py-3 bg-secondary">
+                                                <p class="fs-4 bi bi-calendar-check-fill"></p>
+                                                <p class="p-0 m-0 "><?= $i; ?>.00-<?= $i+1; ?>.00</p>
+                                                <p class="p-0 m-0 fs-4"><?= number_format($lapangan['harga'],0,',','.'); ?>
+                                                </p>
+                                                <?php $selected = $i; ?>
+                                                <p class="p-0 m-0 fw-bold">Booked</p>
+                                            </div>
+                                        </label>
+                                        
+                                    </a>
                                     </div>
-                                </a>
-                            </div>
+                                </label>
+                            
                             <?php } ?>
                             <?php } else { ?>
                             <?php if ($i >= 7 && $i <= 9) { ?>
-                            <div class="col-lg-2 mb-3">
+                            <div class="col-lg-2 mb-3" >
                                 <a class="text-decoration-none text-dark fw-bold w-100" href="" type="button"
                                     data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <div class="card rounded-4  text-center py-3">
-                                        <p class="text-success fs-4 bi bi-plus-circle-fill"></p>
-                                        <p class="p-0 m-0 ">0<?= $i; ?>.00-0<?= $i+1; ?>.00</p>
-                                        <p class="p-0 m-0 fs-4"><?= number_format($lapangan['harga'],0,',','.'); ?>
-                                        </p>
-                                        <p class="p-0 m-0 text-success fw-bold">Available</p>
-                                    </div>
+                                    <label class="btn btn-outline-secondary" for="btn-check-2-outlined">
+                                        <div class="card rounded-4  text-center py-3" for="btn-check-2">
+                                            <p class="text-success fs-4 bi bi-plus-circle-fill"></p>
+                                            <p class="p-0 m-0 ">0<?= $i; ?>.00-0<?= $i+1; ?>.00</p>
+                                            <p class="p-0 m-0 fs-4"><?= number_format($lapangan['harga'],0,',','.'); ?>
+                                            </p>
+                                            <p class="p-0 m-0 text-success fw-bold">Available</p>
+                                        </div>
+                                    </label>
+                                    
                                 </a>
                             </div>
                             <?php } else {?>
-                            <div class="col-lg-2 mb-3">
-                                <a class="text-decoration-none text-dark fw-bold w-100" href="" type="button"
-                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <div class="card rounded-4  text-center py-3">
-                                        <p class="text-success fs-4 bi bi-plus-circle-fill"></p>
-                                        <p class="p-0 m-0 "><?= $i; ?>.00-<?= $i+1; ?>.00</p>
-                                        <p class="p-0 m-0 fs-4"><?= number_format($lapangan['harga'],0,',','.'); ?>
-                                        </p>
-                                        <p class="p-0 m-0 text-success fw-bold">Available</p>
+                                <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
+                                <label class="btn btn-outline-secondary" for="btn-check-2-outlined">
+                                    <div class="col-lg-2 mb-3">
+                                    <a class="text-decoration-none text-dark fw-bold w-100" href="" type="button"
+                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <label class="btn btn-outline-secondary" for="btn-check-2-outlined">
+                                            <div class="card rounded-4  text-center py-3" for="btn-check-2">
+                                                <p class="text-success fs-4 bi bi-plus-circle-fill"></p>
+                                                <p class="p-0 m-0 "><?= $i; ?>.00-<?= $i+1; ?>.00</p>
+                                                <p class="p-0 m-0 fs-4"><?= number_format($lapangan['harga'],0,',','.'); ?>
+                                                </p>
+                                                <p class="p-0 m-0 text-success fw-bold">Available</p>
+                                            </div>
+                                        </label>
+                                        
+                                    </a>
                                     </div>
-                                </a>
-                            </div>
+                                </label><br>
+                            
                             <?php } ?>
                             <?php } ?>
 
@@ -165,7 +187,7 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Batalkan</button>
-                                            <button type="button" class="btn btn-primary">Pesan Sekarang</button>
+                                            <a href="/konfirmasi-pembayaran" class="btn btn-primary">Pesan Sekarang</a>
                                         </div>
                                         </form>
                                     </div>

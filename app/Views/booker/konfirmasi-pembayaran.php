@@ -68,16 +68,16 @@
                         <div class="fs-5">
 
                             <label for="inputNama" class="form-label">Nama</label>
-                            <input type="text" class="form-control" id="inputNama" placeholder="Nama lengkap" style="height:60px">
+                            <input type="text" class="form-control" value="<?= old('nama'); ?>" id="inputNama" placeholder="Nama lengkap" style="height:60px">
 
                             <label for="inputNumber" class="form-label mt-3">Phone</label>
-                            <input type="text" class="form-control" id="inputNumber" placeholder="Nomor Telepon" style="height:60px">
+                            <input type="text" class="form-control" value="<?= old('phone'); ?>" id="inputNumber" placeholder="Nomor Telepon" style="height:60px">
 
                             <label for="inputAddress" class="form-label mt-3">Alamat</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="Alamat lengkap" style="height:60px">
+                            <input type="text" class="form-control" value="<?= old('alamat'); ?>"id="inputAddress" placeholder="Alamat lengkap" style="height:60px">
 
                             <label for="inputKeterangan" class="form-label mt-3">Keterangan</label>
-                            <input type="text" class="form-control" id="inputKeterangan" placeholder="Apartment, studio, or floor" style="height:60px">
+                            <input type="text" class="form-control" value="<?= old('keterangan'); ?>" id="inputKeterangan" placeholder="Apartment, studio, or floor" style="height:60px">
 
 
                             <div class="form-check mt-3">

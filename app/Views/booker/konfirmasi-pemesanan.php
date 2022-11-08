@@ -94,7 +94,7 @@
 
                     </div>
                 </div>
-                <a href="" class="btn btn-danger mt-5">Konfirmasi Pemesanan</a>
+                <a href="/konfirmasi-pembayaran" class="btn btn-danger mt-5">Konfirmasi Pemesanan</a>
             </div>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
