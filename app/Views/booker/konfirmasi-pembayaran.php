@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <form class="row mt-5">
+            <form class="row mt-5" method="POST" action="/dashboard/riwayat-transaksi">
                 <div class="col">
                     <div class="card p-5">
                         <p class="fw-bold fs-3 text-danger">Detail Customer</p>
@@ -108,10 +108,15 @@
                                 <div class="card p-4 m-0 mb-3">
 
                                     <div class="row p-2 m-0 ">
-                                        <p class="fw-bold fs-4 m-0 text-danger">ATG SENTUL</p>
-                                        <p class="fs-5 m-0">Lapangan 1</p>
-                                        <p class="fw-bold m-0">07-Nov-2022 ◦ 06:00 - 08:00</p>
-
+                                        <p class="fw-bold fs-4 m-0 text-danger"><?= $lapangan; ?></p>
+                                        <p class="fs-5 m-0"><?= $tipe; ?></p>
+                                        <p class="fw-bold m-0"><?= date('j F Y', strtotime($tanggal)) ?>
+                                        </p>
+                                        <?php for($i = 0; $i < sizeof($jam) - 1; $i++) {?>
+                                        <p class="p-0 m-0 ms-3">
+                                            <?= $jam[$i]; ?>:00 -
+                                            <?= $jam[$i] + 1; ?>:00</p>
+                                        <?php } ?>
                                         <div class="col mt-3">
                                             <p class="fs-5 m-0">Harga Lapangan</p>
                                             <p class="fs-5 m-0 mt-2">Service fee</p>
@@ -119,72 +124,75 @@
                                         </div>
                                         <div class="col mt-3 text-end">
 
-                                            <p class="fs-5 m-0 mt-2">Rp. 1.980.000</p>
+                                            <p class="fs-5 m-0 mt-2">
+                                                Rp.<?= number_format($total); ?>
+                                            </p>
                                             <p class="fs-5 m-0 mt-2">Rp. 5.000</p>
                                             <hr>
-                                            <p class="fs-5 m-0 mt-3">Rp. 1.985.000</p>
+                                            <p class="fs-5 m-0 mt-3">Rp.<?= number_format($total + 5000); ?></p>
                                         </div>
                                     </div>
 
 
                                 </div>
+
+
+                                <div class="row">
+                                    <div class="card p-4">
+                                        <div class="card-body text-center ">
+                                            <p class="fw-bold fs-4 ">Pilih Jenis Pembayaran</p>
+                                            <p>Pastikan detail pemesanan sudah sesuai dan benar.</p>
+                                        </div>
+
+                                        <div class="accordion" id="accordionExample">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingOne">
+                                                    <button class="accordion-button" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                        aria-expanded="true" aria-controls="collapseOne">
+                                                        Pembayaran QRIS
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <img src="assets/images/qr.png" class="img-thumbnail" alt="...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingTwo">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                        aria-expanded="false" aria-controls="collapseTwo">
+                                                        Virtual Bank
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        <p> BNI : 008008911729361 </p>
+                                                        <p> BRI : 008108911729361 </p>
+                                                        <p> BCA : 008208911729361 </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
                     </form>
-
-                    <div class="row">
-                        <div class="card p-4">
-                            <div class="card-body text-center ">
-                                <p class="fw-bold fs-4 ">Pilih Jenis Pembayaran</p>
-                                <p>Pastikan detail pemesanan sudah sesuai dan benar.</p>
-                            </div>
-
-                            <div class="accordion" id="accordionExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseOne" aria-expanded="true"
-                                            aria-controls="collapseOne">
-                                            Pembayaran QRIS
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show"
-                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <img src="assets/images/qr.png" class="img-thumbnail" alt="...">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                            aria-expanded="false" aria-controls="collapseTwo">
-                                            Virtual Bank
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse"
-                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <p> BNI : 008008911729361 </p>
-                                            <p> BRI : 008108911729361 </p>
-                                            <p> BCA : 008208911729361 </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
                 </div>
-
-        </div>
-
-        <div class="" style="height: 150px;"></div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-        </script>
+                <button type="submit" class="btn btn-danger w-100 py-2 fs-4">Sudah Bayar</button>
+                <div class="" style="height: 150px;"></div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+                    crossorigin="anonymous">
+                </script>
 </body>
 
 </html>

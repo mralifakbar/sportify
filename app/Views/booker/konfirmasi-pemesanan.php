@@ -108,7 +108,23 @@
                         </div>
                     </div>
                 </div>
-                <a href="/konfirmasi-pembayaran" class="btn btn-danger mt-5">Konfirmasi Pemesanan</a>
+                <form action="/konfirmasi-pembayaran" method="post">
+                    <input type="hidden" name="lapangan" value="<?= $lapangan['nama_lapangan']; ?>">
+                    <input type="hidden" name="tipe" value="<?= $lapangan['jenis']; ?>">
+                    <input type="hidden" name="tanggal" value="<?= $tanggal; ?>">
+                    <?php 
+                        $dataJam = "";
+                        for ($i = 0; $i < sizeof($jam); $i++) {
+                            $dataJam = $dataJam . $jam[$i] . " ";
+                        }
+                        echo '<input type="hidden" name="jam" value="<?= $dataJam; ?>">';
+                    // dd($dataJam);
+                    ?>
+                    <input type="hidden" name="jam" value="<?= $dataJam; ?>">
+                    <input type="hidden" name="total" value="<?= $lapangan['harga'] * sizeof($jam); ?>">
+                    <button type="submit" class="btn btn-danger mt-5 w-100">Konfirmasi Pemesanan</button>
+                </form>
+
             </div>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"

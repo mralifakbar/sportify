@@ -8,6 +8,7 @@ use CodeIgniter\Shield\Entities\User;
 use CodeIgniter\Shield\Models\UserModel;
 use App\Models\Lapangan;
 use App\Models\Transaksi;
+use App\Models\DetailCostumer;
 use CodeIgniter\I18n\Time;
 
 class Home extends BaseController
@@ -235,7 +236,33 @@ class Home extends BaseController
     
     public function konfirmasiPembayaran()
     {
-        return view('booker/konfirmasi-pembayaran');
+        $jam = array();
+        // dd($this->request->getPost());   
+        // $id = $this->request->getPost()["idLapangan"];
+        $lapangan = new Lapangan();
+        $jam = $this->request->getPost()["jam"];
+        $jam = explode(" ", $jam);
+        // dd($jam);
+        $data = [
+            'path' => $this->request->getPath(),
+            'lapangan' => $this->request->getPost()["lapangan"],
+            'tanggal' => $this->request->getPost()["tanggal"],
+            'tipe' => $this->request->getPost()["tipe"],
+            'jam' => $jam,
+            'total' => $this->request->getPost()["total"],
+            // 'tanggal' => $this->request->getPost()['tanggal'],
+            'tanggalnow' => date_format(Time::now(), "Y-m-d")
+        ];
+
+        for ($i = 7; $i <= 21; $i++) {
+            $temp = $this->request->getPost()["jam" . $i] ?? null;
+            if($temp) {
+                $jam[] = $i;
+            }
+        }
+        $data['jam'] = $jam;
+        // var_dump($jam);
+        return view('booker/konfirmasi-pembayaran', $data);
     }
 
     public function detailCustomer()
