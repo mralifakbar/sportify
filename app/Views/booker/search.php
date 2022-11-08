@@ -108,35 +108,6 @@
                                     </div>
                                 </div>
                             </a>
-                            <div class="row mt-3">
-                                <div class="col">
-                                    <form action="booking" method="post">
-                                        <?php for($i = 7; $i <= 21; $i++) { ?>
-                                        <?php if (in_array($i, $booked[$bokarr])) {?>
-                                        <?php if ($i >= 7 && $i <= 9) { ?>
-                                        <button type="submit" class="btn btn-secondary me-2 mb-2" role="button"
-                                            tabindex="10" disabled>0<?= $i; ?>.00</button>
-                                        <?php } else {?>
-                                        <button type="submit" class="btn btn-secondary me-2 mb-2" role="button"
-                                            tabindex="10" disabled><?= $i; ?>.00
-                                        </button>
-                                        <?php } ?>
-                                        <?php } else { ?>
-                                        <?php if ($i >= 7 && $i <= 9) { ?>
-                                        <button type="submit" class="btn btn-outline-secondary me-2 mb-2" role="button"
-                                            tabindex="-1">0<?= $i; ?>.00
-                                        </button>
-                                        <?php } else {?>
-                                        <button type="submit" class="btn btn-outline-secondary me-2 mb-2" role="button"
-                                            tabindex="-1"><?= $i; ?>.00
-                                        </button>
-                                        <?php } ?>
-                                        <?php } ?>
-
-                                        <?php } ?>
-                                    </form>
-                                </div>
-                            </div>
 
                         </div>
                         <?php $bokarr++; ?>

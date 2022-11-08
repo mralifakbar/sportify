@@ -209,6 +209,11 @@ class Home extends BaseController
         
         return view('booker/pesan', $data);
     }
+
+    public function belom() {
+        echo "<h1 class='text-center'>Belom gan</h1>";
+    }
+    
     public function konfirmasiPembayaran()
     {
         return view('booker/konfirmasi-pembayaran');
