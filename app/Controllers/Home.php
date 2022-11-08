@@ -168,6 +168,11 @@ class Home extends BaseController
         return view('booker/detail', $data);
     }
 
+    public function konfirmasiPemesanan()
+    {
+        return view('booker/konfirmasi-pemesanan');
+    }
+
     public function pesanLapangan($id)
     {
         // dd($id);
@@ -206,5 +211,10 @@ class Home extends BaseController
 
     public function belom() {
         echo "<h1 class='text-center'>Belom gan</h1>";
+    }
+    
+    public function konfirmasiPembayaran()
+    {
+        return view('booker/konfirmasi-pembayaran');
     }
 }
