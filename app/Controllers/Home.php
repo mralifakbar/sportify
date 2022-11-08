@@ -53,7 +53,7 @@ class Home extends BaseController
     
     public function res()
     {
-        dd($this->request->getGet());
+        dd($this->request->getPost());
     }
     
     public function riwayatTransaksi()
@@ -142,7 +142,6 @@ class Home extends BaseController
                 }
 
             } 
-            
             $data['booked'][] = $bookedField;
         }
         // dd();
@@ -170,7 +169,27 @@ class Home extends BaseController
 
     public function konfirmasiPemesanan()
     {
-        return view('booker/konfirmasi-pemesanan');
+        $jam = array();
+        // dd($this->request->getPost());   
+        $id = $this->request->getPost()["idLapangan"];
+        $lapangan = new Lapangan();
+        $data = [
+            'path' => $this->request->getPath(),
+            'id'=> $id,
+            'lapangan' => $lapangan->where('id', $id)->find()[0],
+            'tanggal' => $this->request->getPost()['tanggal'],
+            'tanggalnow' => date_format(Time::now(), "Y-m-d")
+        ];
+
+        for ($i = 7; $i <= 21; $i++) {
+            $temp = $this->request->getPost()["jam" . $i] ?? null;
+            if($temp) {
+                $jam[] = $i;
+            }
+        }
+        $data['jam'] = $jam;
+        // var_dump($jam);
+        return view('booker/konfirmasi-pemesanan', $data);
     }
 
     public function pesanLapangan($id)
@@ -180,6 +199,7 @@ class Home extends BaseController
         // dd($lapangan->where('id', $id)->find());
         $data = [
             'path' => $this->request->getPath(),
+            'id'=> $id,
             'lapangan' => $lapangan->where('id', $id)->find()[0],
             'tanggal' => date_format(Time::tomorrow(), "Y-m-d"),
             'tanggalnow' => date_format(Time::now(), "Y-m-d")
@@ -210,7 +230,7 @@ class Home extends BaseController
     }
 
     public function belom() {
-        echo "<h1 class='text-center'>Belom gan</h1>";
+        echo "<h1 class='text-center'>Belom bisa gan</h1>";
     }
     
     public function konfirmasiPembayaran()

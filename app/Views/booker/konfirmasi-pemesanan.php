@@ -73,30 +73,49 @@
                         <p>Pastikan detail pemesanan sudah sesuai dan benar.</p>
                     </div>
 
-
-
-                    <div class="card">
+                    <?php for($i = 0; $i < sizeof($jam); $i++) { ?>
+                    <div class="card mb-3">
                         <div class="card-body ">
                             <div class="row">
                                 <div class="col">
-                                    <p class="fw-bold fs-4 m-0">ATG SENTUL</p>
-                                    <p class="m-0">Lapangan 1</p>
-                                    <p class="fw-bold m-0">07-Nov-2022 ◦ 06:00 - 08:00</p>
+                                    <p class="fw-bold fs-4 m-0"><?= $lapangan['nama_lapangan']; ?></p>
+                                    <p class="m-0">Lapangan <?= $lapangan['jenis']; ?></p>
+                                    <p class="fw-bold m-0"><?= date('j F Y', strtotime($tanggal)) ?> ◦
+                                        <?= $jam[$i]; ?>:00 -
+                                        <?= $jam[$i] + 1; ?>:00</p>
                                 </div>
                                 <div class="col text-end">
-                                    <p class="fw-bold fs-4 m-0">Rp. 1,980,000</p>
-                                    <a class="text-muted text-decoration-none" href=""><i class="bi bi-trash3-fill"></i>
+                                    <p class="fw-bold fs-4 m-0">Rp.<?= number_format($lapangan['harga'],0,',','.'); ?>
+                                    </p>
+                                    <a type="button" class="btn text-muted text-decoration-none" href="/belom"><i
+                                            class="bi bi-trash3-fill"></i>
                                         Hapus </a>
-
                                 </div>
                             </div>
                         </div>
 
                     </div>
-                </div>
-                <a href="" class="btn btn-danger mt-5">Konfirmasi Pemesanan</a>
-            </div>
+                    <?php } ?>
 
+                    <div class="row">
+                        <div class="col">
+                            <p class="fw-bold fs-4">Total Pembayaran</p>
+                        </div>
+                        <div class="col">
+                            <p class="fw-bold fs-4 m-0 text-end">
+                                Rp.<?= number_format($lapangan['harga'] * sizeof($jam),0,',','.'); ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="/konfirmasi-pembayaran" method="post">
+                    <button type="submit" href="" class="btn btn-danger py-2 fs-5 mt-5 w-100">Konfirmasi
+                        Pemesanan</button>
+                </form>
+
+            </div>
+            <div class="" style="height: 150px;"></div>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
                 crossorigin="anonymous">
