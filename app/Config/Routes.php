@@ -41,18 +41,20 @@ $routes->get('/', 'Home::index');
 $routes->get('view', 'Home::view');
 // $routes->get('register', 'Home::register');
 $routes->get('dashboard', 'Home::dashboard');
-$routes->get('konfirmasi-pemesanan', 'Home::konfirmasiPemesanan');
+$routes->post('konfirmasi-pemesanan', 'Home::konfirmasiPemesanan');
 $routes->get('forget', 'Home::forget');
 $routes->get('explore', 'Home::explore');
 $routes->get('search', 'Home::search');
 $routes->get('test', 'Home::test');
-$routes->get('res', 'Home::res');
+// $routes->get('res', 'Home::res');
+$routes->post('res', 'Home::konfirmasiPemesanan');
 $routes->get('riwayat-transaksi', 'Home::riwayattransaksi');
 $routes->get('riwayat-pembayaran', 'Home::riwayatPembayaran');
-$routes->get('konfirmasi-pembayaran', 'Home::konfirmasiPembayaran');
+$routes->post('konfirmasi-pembayaran', 'Home::konfirmasiPembayaran');
 $routes->get('detail/(:num)', 'Home::detailLapangan/$1');
 $routes->get('order/(:num)', 'Home::pesanLapangan/$1');
 $routes->post('belom', 'Home::belom');
+$routes->get('belom', 'Home::belom');
 
 // $routes->get('forget', 'Home::forget');
 
