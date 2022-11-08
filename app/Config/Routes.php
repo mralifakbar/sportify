@@ -50,6 +50,7 @@ $routes->get('riwayat-transaksi', 'Home::riwayattransaksi');
 $routes->get('riwayat-pembayaran', 'Home::riwayatPembayaran');
 $routes->get('detail/(:num)', 'Home::detailLapangan/$1');
 $routes->get('order/(:num)', 'Home::pesanLapangan/$1');
+$routes->post('belom', 'Home::belom');
 
 // $routes->get('forget', 'Home::forget');
 

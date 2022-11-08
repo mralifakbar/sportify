@@ -151,7 +151,7 @@
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="" method="post">
+                                            <form action="/belom" method="post">
                                                 <!-- <p><?= $selected; ?></p> -->
                                                 <div class="mb-3 row">
                                                     <label for="durasi" class="col-sm-2 col-form-label">Durasi</label>
@@ -165,7 +165,7 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Batalkan</button>
-                                            <button type="button" class="btn btn-primary">Pesan Sekarang</button>
+                                            <button type="submit" class="btn btn-primary">Pesan Sekarang</button>
                                         </div>
                                         </form>
                                     </div>
