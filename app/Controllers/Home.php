@@ -79,7 +79,7 @@ class Home extends BaseController
             'time' => $datee,
         ];
 
-    // dd($data['time']);
+        // dd($data['transaksi']);
 
         return view('booker/riwayat-transaksi', $data);
     }

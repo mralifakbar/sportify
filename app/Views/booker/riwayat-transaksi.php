@@ -22,6 +22,7 @@
                 </thead>
                 <tbody>
                 <?php
+                
                 foreach ($transaksi as $trans) {
                 ?>
                 <tr>
