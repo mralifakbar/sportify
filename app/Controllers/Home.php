@@ -313,5 +313,9 @@ class Home extends BaseController
     {
         return view('admin/table');
     }
+    public function chart()
+    {
+        return view('admin/chart');
+    }
     
 }
