@@ -9,6 +9,7 @@ use CodeIgniter\Shield\Models\UserModel;
 use App\Models\Lapangan;
 use App\Models\Transaksi;
 use App\Models\DetailCustomer;
+use App\Models\Fasilitas;
 use CodeIgniter\I18n\Time;
 
 class Home extends BaseController
@@ -152,13 +153,16 @@ class Home extends BaseController
     {
         // dd($id);
         $lapangan = new Lapangan();
+        $fasilitas = new Fasilitas();
         // dd($lapangan->where('id', $id)->find());
         $data = [
             'path' => $this->request->getPath(),
             'lapangan' => $lapangan->where('id', $id)->find()[0],
             'tanggal' => date_format(Time::tomorrow(), "Y-m-d"),
-            'tanggalnow' => date_format(Time::now(), "Y-m-d")
+            'tanggalnow' => date_format(Time::now(), "Y-m-d"),
+            'fasilitas' => $fasilitas->where('id_lapangan', $id)->findAll()
         ];
+        // dd($fasilitas->where('id_lapangan', $id)->findAll());
 
         if ($this->request->getGet('dateBook')) {
             $data['tanggal'] = $this->request->getGet('dateBook');
@@ -297,4 +301,21 @@ class Home extends BaseController
         
         return redirect()->to('/riwayat-transaksi');
     }
+    public function loginadmin()
+    {
+        return view('admin/admin-login');
+    }
+    public function admindashboard()
+    {
+        return view('admin/admin-dashboard');
+    }
+    public function table()
+    {
+        return view('admin/table');
+    }
+    public function chart()
+    {
+        return view('admin/chart');
+    }
+    
 }

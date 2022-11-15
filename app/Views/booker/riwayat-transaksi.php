@@ -13,10 +13,11 @@
                 <thead>
                     <tr>
                         <th>Nama Lapangan</th>
+                        <th>Jenis Lapangan</th>
                         <th>Tipe Lapangan</th>
                         <th>Tanggal Penyewaan</th>
                         <th>Jam Penyewaan</th>
-                        <th>Durasi</th>
+                        <th>Total (Rp.)</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -27,10 +28,11 @@
                 ?>
                 <tr>
                     <td><?php echo $trans['nama_lapangan']; ?></td>
+                    <td><?php echo $trans['jenis']; ?></td>
                     <td><?php echo $trans['tipe_lapangan']; ?></td>
                     <td><?php echo $trans['tanggal']; ?></td>
-                    <td><?php echo $trans['jam']; ?></td>
-                    <td><?php echo $trans['durasi']; ?></td>
+                    <td><?php echo $trans['jam'] , '.00 WIB'; ?></td>
+                    <td><?php echo $trans['total_pembayaran']; ?></td>
                     <td><?php if ($trans['tanggal'] > $time):?>
                             Akan Datang
                         <?php elseif ($trans['tanggal'] == $time): ?>

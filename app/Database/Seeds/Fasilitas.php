@@ -29,6 +29,46 @@ class Fasilitas extends Seeder
 				'nama_fasilitas'  => 'Locker',
 				
 			],
+			[
+				'id_lapangan' => '3',
+				'nama_fasilitas'  => 'Wifi',
+				
+			],
+			[
+				'id_lapangan' => '3',
+				'nama_fasilitas'  => 'Mushola',
+				
+			],
+            [
+				'id_lapangan' => '3',
+				'nama_fasilitas'  => 'Kantin',
+				
+			],
+            [
+				'id_lapangan' => '3',
+				'nama_fasilitas'  => 'Locker',
+				
+			],
+			[
+				'id_lapangan' => '1',
+				'nama_fasilitas'  => 'Wifi',
+				
+			],
+			[
+				'id_lapangan' => '1',
+				'nama_fasilitas'  => 'Mushola',
+				
+			],
+            [
+				'id_lapangan' => '1',
+				'nama_fasilitas'  => 'Kantin',
+				
+			],
+            [
+				'id_lapangan' => '1',
+				'nama_fasilitas'  => 'Locker',
+				
+			],
             
 		];
 
