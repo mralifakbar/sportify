@@ -317,5 +317,17 @@ class Home extends BaseController
     {
         return view('admin/chart');
     }
+    public function pengelolaDashboard()
+    {
+        return view('pengelola-lapangan/dashboard-pengelola');
+    }
+    public function tableLapangan()
+    {
+        return view('pengelola-lapangan/table-lapangan');
+    }
+    public function tableDataTransaksi()
+    {
+        return view('pengelola-lapangan/table-datatransaksi');
+    }
     
 }
