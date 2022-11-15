@@ -21,11 +21,17 @@ class Waktu extends Migration
                 'null' => false,
             ],
             'jam' => [
-                'type'       => 'TIME',
+                'type'       => 'VARCHAR',
+                'constraint' => '12',
                 'null' => false,
             ],
             'tanggal' => [
                 'type'       => 'DATE',
+                'null' => false,
+            ],
+            'id_lapangan' => [
+                'type'       => 'INT',
+                'constraint' => '5',
                 'null' => false,
             ],
         ]);

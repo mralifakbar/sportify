@@ -13,7 +13,10 @@ class Lapangan extends Model
     // protected $allowedFields    = [];
 
     public function checkAvail($date, $hour, $id) {
-        $transaksi = new Transaksi();
-        return $transaksi->where(array('tanggal' => $date, 'jam' => $hour, 'id_lapangan' => $id))->findAll();
+        // $transaksi = new Transaksi();
+        // return $transaksi->where(array('tanggal' => $date, 'jam' => $hour, 'id_lapangan' => $id))->findAll();
+
+        $waktu = new Waktu();
+        return $waktu->where(array('tanggal' => $date, 'jam' => $hour, 'id_lapangan' => $id))->findAll();
     }
 }

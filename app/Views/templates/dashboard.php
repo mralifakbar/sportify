@@ -24,6 +24,7 @@
     <link href="../assets/sb-admin-2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" rel="stylesheet"
         rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="../assets/images/ball.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>
 
 <body id="page-top">
@@ -43,36 +44,11 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item <?php if ($path === 'dashboard') echo 'active' ?>">
+            <li class="nav-item active">
                 <a class="nav-link" href="dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item <?php if ($path === 'riwayat-transaksi') echo 'active' ?>">
-                <a class="nav-link" href="riwayat-transaksi">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Riwayat Transaksi</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item <?php if ($path === 'riwayat-pembayaran') echo 'active' ?>">
-                <a class="nav-link" href="riwayat-pembayaran">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Riwayat Pembayaran</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -346,7 +322,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="../assets/sb-admin-2/js/sb-admin-2.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <!-- Page level plugins -->
     <script src="../assets/sb-admin-2/vendor/chart.js/Chart.min.js"></script>
 

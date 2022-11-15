@@ -37,32 +37,34 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+// home
 $routes->get('/', 'Home::index');
 $routes->get('view', 'Home::view');
-// $routes->get('register', 'Home::register');
-$routes->get('dashboard', 'Home::dashboard');
+$routes->get('dashboard', 'BookerController::riwayatTransaksi');
 $routes->get('admin-dashboard', 'Home::admindashboard');
-$routes->post('konfirmasi-pemesanan', 'Home::konfirmasiPemesanan');
 $routes->get('table', 'Home::table');
 $routes->get('chart', 'Home::chart');
 $routes->get('login-admin', 'Home::loginadmin');
 $routes->get('forget', 'Home::forget');
-$routes->get('explore', 'Home::explore');
-$routes->get('search', 'Home::search');
 $routes->get('test', 'Home::test');
-// $routes->get('res', 'Home::res');
 $routes->post('res', 'Home::konfirmasiPemesanan');
-$routes->get('riwayat-transaksi', 'Home::riwayattransaksi');
-$routes->get('riwayat-pembayaran', 'Home::riwayatPembayaran');
-$routes->post('konfirmasi-pembayaran', 'Home::konfirmasiPembayaran');
-$routes->get('detail/(:num)', 'Home::detailLapangan/$1');
-$routes->get('order/(:num)', 'Home::pesanLapangan/$1');
 $routes->post('belom', 'Home::belom');
 $routes->get('belom', 'Home::belom');
-$routes->post('bayar', 'Home::bayar');
 
-// $routes->get('forget', 'Home::forget');
+//booker
+$routes->post('konfirmasi-pemesanan', 'BookerController::konfirmasiPemesanan');
+$routes->get('explore', 'BookerController::explore');
+$routes->get('search', 'BookerController::search');
+$routes->get('riwayat-transaksi', 'BookerController::riwayatTransaksi');
+$routes->get('riwayat-pembayaran', 'BookerController::riwayatPembayaran');
+$routes->post('konfirmasi-pembayaran', 'BookerController::konfirmasiPembayaran');
+$routes->get('detail/(:num)', 'BookerController::detailLapangan/$1');
+$routes->get('order/(:num)', 'BookerController::pesanLapangan/$1');
+$routes->post('bayar', 'BookerController::bayar');
+$routes->get('cancel-booking/(:num)', 'BookerController::cancelBooking/$1');
 
+// auth
 service('auth')->routes($routes);
 
 /*

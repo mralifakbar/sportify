@@ -29,15 +29,6 @@ class Transaksi extends Migration
                 'type' => 'DATE',
                 'null' => false,
             ],
-            'jam' => [
-                'type' => 'INT',
-                'null' => false,
-                'constraint' => '5',
-            ],
-            'durasi' => [
-                'type' => 'INT',
-                'null' => false,
-            ],
             'total_pembayaran' => [
                 'type' => 'INT',
                 'null' => false,

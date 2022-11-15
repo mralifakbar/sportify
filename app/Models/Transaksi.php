@@ -24,8 +24,21 @@ class Transaksi extends Model
 
     public function getDataLapangan()
     {
+        // $builder = $this->db->table('transaksi')->where('id_user', auth()->user()->id);
+        // $builder->join('lapangan', 'transaksi.id_lapangan = lapangan.id');
+        
+        $builder = $this->db->table('lapangan');
+        $builder->join('transaksi', 'lapangan.id = transaksi.id_lapangan')->where('id_user', auth()->user()->id)->orderBy('tanggal', 'ASC');
+
+        $query = $builder->get()->getResultArray();
+
+        return $query;
+    }
+    
+    public function getDataWaktu()
+    {
         $builder = $this->db->table('transaksi')->where('id_user', auth()->user()->id);
-        $builder->join('lapangan', 'lapangan.id = transaksi.id_lapangan');
+        $builder->join('waktu', 'waktu.id_transaksi = transaksi.id');
         $query = $builder->get()->getResultArray();
 
         return $query;

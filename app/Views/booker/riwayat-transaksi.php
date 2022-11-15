@@ -1,4 +1,3 @@
-
 <?= $this->extend('templates/dashboard') ?>
 <?= $this->section('content') ?>
 
@@ -9,45 +8,90 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>Nama Lapangan</th>
                         <th>Jenis Lapangan</th>
-                        <th>Tipe Lapangan</th>
                         <th>Tanggal Penyewaan</th>
                         <th>Jam Penyewaan</th>
                         <th>Total (Rp.)</th>
-                        <th>Status</th>
+                        <th>Status Pembayaran</th>
+                        <th>Status Bermain</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
-                <tbody>
-                <?php
+                <tbod>
+                    <?php
                 
                 foreach ($transaksi as $trans) {
                 ?>
-                <tr>
-                    <td><?php echo $trans['nama_lapangan']; ?></td>
-                    <td><?php echo $trans['jenis']; ?></td>
-                    <td><?php echo $trans['tipe_lapangan']; ?></td>
-                    <td><?php echo $trans['tanggal']; ?></td>
-                    <td><?php echo $trans['jam'] , '.00 WIB'; ?></td>
-                    <td><?php echo $trans['total_pembayaran']; ?></td>
-                    <td><?php if ($trans['tanggal'] > $time):?>
+                    <tr>
+                        <td class="align-middle"><?php echo $trans['nama_lapangan']; ?></td>
+                        <td class="align-middle"><?php echo $trans['jenis']; ?></td>
+                        <td class="align-middle"><?php echo $trans['tanggal']; ?></td>
+                        <td class="align-middle">
+                            <?php 
+                                foreach ($jam as $jm) {
+                                    if ($jm['id_transaksi'] == $trans['id']) {
+                                        echo $jm['jam'].".00 ";
+                                    }
+                                }
+                            ?>
+                        </td>
+                        <td class="align-middle"><?php echo number_format($trans['total_pembayaran']); ?></td>
+                        <td class="align-middle"><button class="btn btn-warning" disabled>Pending</button></td>
+                        <td class="align-middle">
+                            <?php if ($trans['tanggal'] > $time):?>
                             Akan Datang
-                        <?php elseif ($trans['tanggal'] == $time): ?>
-                            Sedang Berlangsung
-                        <?php else: ?>
+                            <?php elseif ($trans['tanggal'] == $time): ?>
+                            Berlangsung hari ini
+                            <?php else: ?>
                             Sudah Selesai
-                        <?php endif; ?></td>
-
-                </tr>
-                <?php
+                            <?php endif; ?></td>
+                        <td class="align-middle">
+                            <?php if ($trans['tanggal'] > $time):?>
+                            <a class="btn btn-danger" data-toggle="modal" data-target="#deleteTransModal"
+                                id="cancel-<?= $trans['id'] ?>" onclick="cancelBook(<?= $trans['id'] ?>)"
+                                data-bs-toggle="tooltip" data-bs-title="Batalkan Penyewaan"><i
+                                    class="bi bi-x-lg"></i></a>
+                            <?php endif; ?>
+                            <a href="/belom" class="btn btn-warning"><i class="bi bi-eye-fill"></i></i></a>
+                        </td>
+                    </tr>
+                    <?php
                 }
                 ?>
-                </tbody>
+                    </tbody>
             </table>
+        </div>
+
+        <div class="modal fade" id="deleteTransModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Yakin ingin membatalkan?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">Jika Anda sudah yakin, silakan pilih "Batalkan Pesanan" untuk membatalkan
+                        pesanan Anda</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Kembali</button>
+                        <a class="btn btn-danger" id="cancelButton">Batalkan Pesanan</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+<script>
+function cancelBook(id) {
+    document.getElementById('cancelButton').setAttribute('href', '/cancel-booking/' + id)
+}
+</script>
 <?= $this->endsection('content') ?>
