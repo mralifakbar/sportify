@@ -94,9 +94,8 @@ class Home extends BaseController
 
     public function explore()
     {
-        $datetime = date_parse(Time::now());
         $data = [
-            'tanggal' => $datetime['year'].'-'.$datetime['month'].'-'.$datetime['day'],
+            'tanggal' => date_format(Time::tomorrow(), "Y-m-d"),
         ];
         return view('booker/explore', $data);
     }
@@ -148,6 +147,7 @@ class Home extends BaseController
         // dd();
         return view('booker/search', $data);
     }
+    
     public function detailLapangan($id)
     {
         // dd($id);

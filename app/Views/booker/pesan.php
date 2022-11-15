@@ -68,8 +68,9 @@
                             class="text-danger"><?= date('j F Y', strtotime($tanggal)) ?></span></p>
                     <p class="fs-5 my-4 text-center">Atau ganti tanggal booking</p>
                     <div class="col-lg-3 mb-3 mb-lg-5 mx-auto" style="width: 30%">
-                        <input type="date" class="form-control" id="datebBooking" required name="dateBook"
-                            value="<?= $tanggal; ?>" min="<?= $tanggalnow; ?>" style="height: 60px !important;">
+                        <input type="date" class="form-control" id="dateBooking" required name="dateBook"
+                            value="<?= $tanggal; ?>" min="<?= $tanggalnow; ?>" style="height: 60px !important;"
+                            onchange="changeDate(<?= $id ?>)">
                     </div>
 
                     <form action="/konfirmasi-pemesanan" method="post">
@@ -153,7 +154,8 @@
                                 <?php } ?>
 
 
-                                <button type="submit" class="btn btn-primary py-2 fs-5">Submit</button>
+                                <button disabled type="submit" class="btn btn-primary py-2 fs-5"
+                                    id="submitBtn">Submit</button>
                     </form>
                 </div>
             </div>
@@ -176,6 +178,12 @@
 
     <div class="" style="height: 150px;"></div>
     <script>
+    let count = 0;
+
+    function changeDate(id) {
+        window.location.replace("/order/" + id + "?dateBook=" + document.getElementById('dateBooking').value);
+    }
+
     function change(id) {
         let text = "btn-check-" + id + "-outlined"
         const checkbox = document.getElementById(text)
@@ -187,6 +195,7 @@
             document.getElementById('statusIcon' + id).classList.add("text-light")
             document.getElementById('card' + id).classList.add("text-light")
             document.getElementById('card' + id).classList.add("bg-success")
+            count++
         } else {
             document.getElementById('statusText' + id).innerHTML = "Available"
             document.getElementById('statusText' + id).classList.remove("text-light")
@@ -195,6 +204,13 @@
             document.getElementById('statusIcon' + id).classList.remove("text-light")
             document.getElementById('card' + id).classList.remove("text-light")
             document.getElementById('card' + id).classList.remove("bg-success")
+            count--
+        }
+
+        if (!count) {
+            document.getElementById('submitBtn').setAttribute('disabled', '')
+        } else {
+            document.getElementById('submitBtn').removeAttribute('disabled')
         }
     }
     </script>

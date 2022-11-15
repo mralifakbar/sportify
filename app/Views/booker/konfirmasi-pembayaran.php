@@ -15,7 +15,7 @@
     <div class="full-screen">
         <nav class="navbar navbar-expand-lg navbar-light pt-3 pt-lg-3">
             <div class="container">
-                <a class="navbar-brand p-lg-3 d-flex" href="">
+                <a class="navbar-brand p-lg-3 d-flex" href="/explore">
                     <img src="../assets/images/ball.svg" alt="Brand Icon" class="logo-brand">
                     <h5 class="mb-0 ms-2">Sportify</h5>
                 </a>
@@ -73,10 +73,10 @@
                 <input type="hidden" name="tipe" value="<?= $tipe; ?>">
                 <input type="hidden" name="tanggal" value="<?= $tanggal; ?>">
                 <input type="hidden" name="jam" value="<?= $jam[0]; ?>">
-                <input type="hidden" name="durasi" value="<?= sizeof($jam); ?>">
+                <input type="hidden" name="durasi" value="<?= sizeof($jam)-1; ?>">
                 <input type="hidden" name="total" value="<?= $total + 5000 ?>">
 
-                <div class="col">
+                <div class="col-lg-6">
                     <div class="card p-5">
                         <p class="fw-bold fs-3 text-danger">Detail Customer</p>
                         <div class="fs-5">
@@ -107,43 +107,49 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-6 mt-3 mt-lg-0">
                     <form class="row">
                         <div class="col mb-4">
                             <div class="card p-5">
                                 <p class="fw-bold fs-3 text-danger">Jenis Pembayaran</p>
                                 <div class="fs-5"></div>
-                                <div class="card p-4 m-0 mb-3">
+                                <div class="row">
+                                    <div class="card p-4 mb-4 ">
 
-                                    <div class="row p-2 m-0 ">
-                                        <p class="fw-bold fs-4 m-0 text-danger"><?= $lapangan; ?></p>
-                                        <p class="fs-5 m-0"><?= $tipe; ?></p>
-                                        <p class="fw-bold m-0"><?= date('j F Y', strtotime($tanggal)) ?>
-                                        </p>
-                                        <?php for($i = 0; $i < sizeof($jam) - 1; $i++) {?>
-                                        <p class="p-0 m-0 ms-3">
-                                            <?= $jam[$i]; ?>:00 -
-                                            <?= $jam[$i] + 1; ?>:00</p>
-                                        <?php } ?>
-                                        <div class="col mt-3">
-                                            <p class="fs-5 m-0">Harga Lapangan</p>
-                                            <p class="fs-5 m-0 mt-2">Service fee</p>
-                                            <p class="fs-5 m-0 mt-5">Total</p>
-                                        </div>
-                                        <div class="col mt-3 text-end">
+                                        <div class="row p-2 m-0 ">
+                                            <p class="fw-bold fs-4 m-0 text-danger"><?= $lapangan; ?></p>
+                                            <p class="fs-5 m-0">Lapangan <?= $tipe; ?></p>
 
-                                            <p class="fs-5 m-0 mt-2">
-                                                Rp.<?= number_format($total); ?>
-                                            </p>
-                                            <p class="fs-5 m-0 mt-2">Rp. 5.000</p>
-                                            <hr>
-                                            <p class="fs-5 m-0 mt-3">Rp.<?= number_format($total + 5000); ?></p>
+                                            <div class="col mt-3">
+
+                                                <?php for($i = 0; $i < sizeof($jam) - 1; $i++) {?>
+                                                <p class="fw-bold m-0"><?= date('j F Y', strtotime($tanggal)) ?>
+                                                    <?php } ?>
+
+                                                <p class="fs-5 m-0 mt-4">Harga Lapangan</p>
+                                                <p class="fs-5 m-0 mt-2">Service fee</p>
+                                                <p class="fs-5 m-0 mt-3 fw-bold">Total</p>
+                                            </div>
+                                            <div class="col mt-3 text-end">
+
+                                                <?php for($i = 0; $i < sizeof($jam) - 1; $i++) {?>
+                                                <p class="p-0 m-0 fw-bold">
+                                                    <?= $jam[$i]; ?>:00 -
+                                                    <?= $jam[$i] + 1; ?>:00</p>
+                                                <?php } ?>
+
+                                                <p class="fs-5 m-0 mt-4">
+                                                    Rp.<?= number_format($total); ?>
+                                                </p>
+                                                <p class="fs-5 m-0 mt-2">Rp.5,000</p>
+                                                <p class="fs-5 m-0 mt-3 fw-bold">Rp.<?= number_format($total + 5000); ?>
+                                                </p>
+                                            </div>
                                         </div>
+
+
                                     </div>
-
-
                                 </div>
-
 
                                 <div class="row">
                                     <div class="card p-4">
@@ -193,14 +199,16 @@
                                 </div>
 
                             </div>
-                    </form>
+
+                        </div>
                 </div>
-                <button type="submit" class="btn btn-danger w-100 py-2 fs-4">Sudah Bayar</button>
-                <div class="" style="height: 150px;"></div>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-                    crossorigin="anonymous">
-                </script>
+                <button type="submit" class="btn btn-danger w-100 py-2 fs-4 mt-5">Sudah Bayar</button>
+            </form>
+            <div class="" style="height: 150px;"></div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+                crossorigin="anonymous">
+            </script>
 </body>
 
 </html>

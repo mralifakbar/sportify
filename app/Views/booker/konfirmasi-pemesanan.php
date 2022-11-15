@@ -69,8 +69,8 @@
             <div class="row mt-5">
                 <div class="card p-4">
                     <div class="card-body text-center ">
-                        <p class="fw-bold fs-4">Periksa Pemesanan Anda</p>
-                        <p>Pastikan detail pemesanan sudah sesuai dan benar.</p>
+                        <p class="fw-bold fs-3 m-0 mb-2">Periksa Pemesanan Anda</p>
+                        <p class="m-0 mb-3">Pastikan detail pemesanan sudah sesuai dan benar.</p>
                     </div>
 
                     <?php for($i = 0; $i < sizeof($jam); $i++) { ?>
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-                <form action="/konfirmasi-pembayaran" method="post">
+                <form action="/konfirmasi-pembayaran" method="post" class="p-0">
                     <input type="hidden" name="lapangan" value="<?= $lapangan['nama_lapangan']; ?>">
                     <input type="hidden" name="tipe" value="<?= $lapangan['jenis']; ?>">
                     <input type="hidden" name="tanggal" value="<?= $tanggal; ?>">
@@ -123,11 +123,11 @@
                     <input type="hidden" name="jam" value="<?= $dataJam; ?>">
                     <input type="hidden" name="total" value="<?= $lapangan['harga'] * sizeof($jam); ?>">
                     <input type="hidden" name="id" value="<?= $id ?>">
-                    <button type=" submit" class="btn btn-danger mt-5 w-100">Konfirmasi Pemesanan</button>
+                    <button type=" submit" class="btn btn-danger mt-5 py-2 fs-5 w-100">Konfirmasi Pemesanan</button>
                 </form>
 
             </div>
-
+            <div class="" style="height: 150px;"></div>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
                 crossorigin="anonymous">
