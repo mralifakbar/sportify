@@ -6,8 +6,14 @@ use App\Controllers\BaseController;
 
 class AdminController extends BaseController
 {
-    public function index()
+    public function tablepengelola()
     {
-        //
+        return view('admin/table-pengelola');
     }
+    
+    public function transaksiUsers()
+    {
+        return view('admin/transaksi-users');
+    }
+
 }

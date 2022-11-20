@@ -9,15 +9,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ADMIN DASHBOARD</title>
+    <title>Sportify - Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link href="../assets/sb-admin-2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../assets/sb-admin-2/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <!-- <link rel="stylesheet" href="../assets/css/bootstrap.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../assets/css/main.css"> -->
+    <link href="../assets/sb-admin-2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" rel="stylesheet" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="../assets/images/ball.svg" type="image/x-icon">
 </head>
 
 <body id="page-top">
@@ -30,9 +33,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
+
                 <div class="sidebar-brand-text mx-3">Sportify<sup></sup></div>
             </a>
 
@@ -55,17 +56,11 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Charts</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                </div>
+            <li class="nav-item active">
+                <a class="nav-link" href="chart">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Charts </span></a>
             </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-           
             <li class="nav-item active">
                 <a class="nav-link" href="table">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -79,14 +74,17 @@
                     <span>Transaksi users </span></a>
             </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="table-pengelola">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Tabel pengelola </span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="table-pengelola" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Tabel lapangan</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                </div>
             </li>
 
 
-            
+
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -268,12 +266,12 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="../assets/sb-admin-2/img/undraw_profile.svg">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= auth()->user()->username; ?></span>
+                                <img class="img-profile rounded-circle" src="https://source.unsplash.com/100x100?man">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
@@ -301,183 +299,127 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
+
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Chart (perbulan)</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-                    </div>
+                    <h1 class="h3 mb-2 text-gray-800"> Tabel Lapangan</h1>
+                    <p class="mb-1"><a target="_blank" href="https://datatables.net"></a></p>
 
-                    <!-- Content Row -->
-                  
+                   
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Info Lapangan</h6>
+                        </div>
 
-                        <!-- Earnings (Monthly) Card Example -->
-                      
 
-                        <!-- Earnings (Monthly) Card Example -->
-                       
 
-                        <!-- Earnings (Monthly) Card Example -->
-                       
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
 
-                        <!-- Pending Requests Card Example -->
-                        
-                    
+                                        <tr>
+                                            <th>Username</th>
+                                            <th>Nama Lapangan</th>
+                                            <th>Jenis Lapangan</th>
+                                            <th>Tipe Lapangan</th>
+                                            <th>Harga Perjam</th>
+                                            <th>Aksi</th>
 
-                    <!-- Content Row -->
+                                        </tr>
+                                    </thead>
 
-                    <div class="row">
+                                    <tbody>
+                                        <tr>
+                                            <td>Bang_alif</td>
+                                            <td>Gor Saburai</td>
+                                            <td>Futsal</td>
+                                            <td>Rumput</td>
+                                            <td>Rp.70.000</td>
+                                            <td><button type="button" class="btn btn-warning"><i class="fa fa-edit"></i></button>
+                                                <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                            </td>
 
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Chart Penyewaan Perbulan</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                </div>
+                                        </tr>
+
+                                        <tr>
+                                            <td>nasywanathaania</td>
+                                            <td>Gor Dekhafin</td>
+                                            <td>Badmintoon</td>
+                                            <td>Lantai</td>
+                                            <td>Rp.50.000</td>
+                                            <td><button type="button" class="btn btn-warning"><i class="fa fa-edit"></i></button>
+                                                <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                            </td>
+
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
 
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Dropdown Header:</div>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
+                        <!-- /.container-fluid -->
+
+                        <!-- End of Main Content -->
+
+                        <!-- Footer -->
+                        <footer class="sticky-footer bg-white">
+                            <div class="container my-auto">
+                                <div class="copyright text-center my-auto">
+                                    <span>Copyright &copy; Sportify 2022</span>
                                 </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Direct
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Social
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
-                                        </span>
-                                    </div>
-                                </div>
+                            </div>
+                        </footer>
+                        <!-- End of Footer -->
+
+                    </div>
+                    <!-- End of Content Wrapper -->
+
+                </div>
+                <!-- End of Page Wrapper -->
+
+                <!-- Scroll to Top Button-->
+                <a class="scroll-to-top rounded" href="#page-top">
+                    <i class="fas fa-angle-up"></i>
+                </a>
+
+                <!-- Logout Modal-->
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                <a class="btn btn-primary" href="logout">Logout</a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Content Column -->
-                        <div class="col-lg-6 mb-4">
-
-                            
-
-
-                        </div>
-
-                        <div class="col-lg-6 mb-4">
-
-                            <!-- Illustrations -->
-
-
-
-
-                        </div>
-                    </div>
-
                 </div>
-                <!-- /.container-fluid -->
 
-            </div>
-            <!-- End of Main Content -->
+                <!-- Bootstrap core JavaScript-->
+                <script src="../assets/sb-admin-2/vendor/jquery/jquery.min.js"></script>
+                <script src="../assets/sb-admin-2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+                <!-- Core plugin JavaScript-->
+                <script src="../assets/sb-admin-2/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        </div>
-        <!-- End of Content Wrapper -->
+                <!-- Custom scripts for all pages-->
+                <script src="../assets/sb-admin-2/js/sb-admin-2.min.js"></script>
 
-    </div>
-    <!-- End of Page Wrapper -->
+                <!-- Page level plugins -->
+                <script src="../assets/sb-admin-2/vendor/chart.js/Chart.min.js"></script>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="../assets/sb-admin-2/vendor/jquery/jquery.min.js"></script>
-    <script src="../assets/sb-admin-2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="../assets/sb-admin-2/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="../assets/sb-admin-2/js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="../assets/sb-admin-2/vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="../assets/sb-admin-2/js/demo/chart-area-demo.js"></script>
-    <script src="../assets/sb-admin-2/js/demo/chart-pie-demo.js"></script>
+                <!-- Page level custom scripts -->
+                <script src="../assets/sb-admin-2/js/demo/chart-area-demo.js"></script>
+                <script src="../assets/sb-admin-2/js/demo/chart-pie-demo.js"></script>
 
 </body>
 
