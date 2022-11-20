@@ -313,7 +313,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Info Lapangan</h6>
+                            <h6 class="m-0 font-weight-bold text-danger">Info Lapangan</h6>
                         </div>
 
                         
@@ -361,6 +361,59 @@
                             
                                     </tbody>
                                 </table>
+
+        <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Tambah Data Lapangan</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <form action="#" method="POST">
+                <div class="modal-body">
+                    <input type="text" name="namalapangan" placeholder="Nama Lapangan" class="form-control">
+                    <label for="exampleFormControlSelect1"></label><select class="form-control" id="exampleFormControlSelect1">
+                    <option>Jenis Lapangan</option>
+                    <option>Futsal</option>
+                    <option>Basket</option>
+                    <option>Badmintoon</option> 
+                    </select>
+                    <br>
+                    <input type="text" name="lokasi" placeholder="Lokasi" class="form-control">
+                    <label for="exampleFormControlSelect1"></label><select class="form-control" id="exampleFormControlSelect1">
+                    <option>Tipe Lapangan</option>
+                    <option>Outdoor</option>
+                    <option>Indoor</option>
+                    </select>
+                    <label for="exampleFormControlSelect1"></label><select class="form-control" id="exampleFormControlSelect1">
+                    <option>Tipe Lantai</option>
+                    <option>Rumput Hijau</option>
+                    <option>Semen Halus</option>
+                    <option>Semen Kasar</option>
+                    </select>
+                    <br>
+                    <input type="text" name="panjang" placeholder="Panjang Lapangan" class="form-control">
+                    <br>
+                    <input type="text" name="lebar" placeholder="Lebar Lapangan" class="form-control">
+                    <br>
+                    <input type="text" name="harga" placeholder="Harga" class="form-control">
+                    <br>
+                    <label for="exampleFormControlTextarea1">Deskripsi</label><textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <br>
+                    <label for="formFile" class="form-label">Foto Lapangan</label>
+                    <input class="form-control" type="file" id="formFile">
+                    <br>
+                    <button type="submit" class="btn btn-primary" name="addPenduduk"> Submit </button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
                             </div>
                         </div>
              
@@ -425,7 +478,10 @@
     <!-- Page level custom scripts -->
     <script src="../assets/sb-admin-2/js/demo/chart-area-demo.js"></script>
     <script src="../assets/sb-admin-2/js/demo/chart-pie-demo.js"></script>
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
