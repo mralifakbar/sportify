@@ -31,7 +31,7 @@ class BookerController extends BaseController
         $data = [
             'lapangan' => $lapangan->findAll(),
             'transaksi' => $transaksi->getDataLapangan(),
-            'path' => $this->request->getPath(),
+            // 'path' => $this->request->getPath() ?? 'dashboard',
             'time' => $datee,
             'jam' => $transaksi->getDataWaktu(),
         ];

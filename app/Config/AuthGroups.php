@@ -40,6 +40,10 @@ class AuthGroups extends ShieldAuthGroups
             'title'       => 'User',
             'description' => 'General users of the site. Often customers.',
         ],
+        'field-manager' => [
+            'title'       => 'Field Manager',
+            'description' => 'The user who controls the field.',
+        ],
         'beta' => [
             'title'       => 'Beta User',
             'description' => 'Has access to beta-level features.',
@@ -91,6 +95,7 @@ class AuthGroups extends ShieldAuthGroups
             'users.edit',
             'beta.access',
         ],
+        'field-manager' => [],
         'user' => [],
         'beta' => [
             'beta.access',

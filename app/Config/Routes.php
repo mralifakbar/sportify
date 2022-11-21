@@ -41,7 +41,7 @@ $routes->set404Override();
 // home
 $routes->get('/', 'Home::index');
 $routes->get('view', 'Home::view');
-$routes->get('dashboard', 'BookerController::riwayatTransaksi');
+$routes->get('dashboard', 'Home::dashboard');
 $routes->get('admin-dashboard', 'Home::admindashboard');
 $routes->get('dashboard-pengelola', 'Home::pengelolaDashboard');
 $routes->get('table-lapangan', 'Home::tableLapangan');

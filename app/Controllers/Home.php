@@ -33,10 +33,22 @@ class Home extends BaseController
 
     public function dashboard()
     {
+        $userGroup = auth()->user()->getGroups()[0];
         $data = [
-            'path' => $this->request->getPath(),
+            'title' => 'Dashboard',
         ];
-        return view('templates/dashboard', $data);
+        
+        if ($userGroup == 'user') {
+            return (new BookerController)->riwayatTransaksi();
+        } else if ($userGroup == 'admin') {
+            $data['title'] = 'Admin Dashboard';
+
+            return view('admin/admin-dashboard');
+        } else if ($userGroup == 'field-manager') {
+            $data['title'] = 'Pengelola Dashboard';
+
+            return view('pengelola-lapangan/dashboard-pengelola');
+        }
     }
     
     public function forget()
@@ -51,6 +63,9 @@ class Home extends BaseController
     
     public function test()
     {
+        auth()->user()->removeGroup('field-manager');
+        auth()->user()->addGroup('user');
+        dd(auth()->user()->getGroups());
         return view('testing');
     }
     
