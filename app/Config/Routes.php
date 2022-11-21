@@ -70,6 +70,10 @@ $routes->get('cancel-booking/(:num)', 'BookerController::cancelBooking/$1');
 // auth
 service('auth')->routes($routes);
 
+//AdminController
+$routes->get('table-pengelola', 'AdminController::tablepengelola');
+$routes->get('transaksi-users', 'AdminController::transaksiUsers');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
