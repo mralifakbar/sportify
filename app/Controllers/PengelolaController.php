@@ -148,6 +148,6 @@ class PengelolaController extends BaseController
     }
 
     public function isFieldManager() {
-        return auth()->user()->getGroups() != 'field-manager';
+        return auth()->user()->getGroups()[0] == 'field-manager';
     }
 }

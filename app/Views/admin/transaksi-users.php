@@ -25,7 +25,6 @@
                     <thead>
 
                         <tr>
-                            <th>Username</th>
                             <th>Nama Lapangan</th>
                             <th>Jenis Lapangan</th>
                             <th>Tanggal Penyewaan</th>
@@ -46,8 +45,6 @@
                                     foreach ($transaksi as $trans) {
                                     ?>
                         <tr>
-
-                            <td class="align-middle">daffaputra</td>
                             <td class="align-middle"><?php echo $trans['nama_lapangan']; ?></td>
                             <td class="align-middle"><?php echo $trans['jenis']; ?></td>
                             <td class="align-middle"><?php echo $trans['tanggal']; ?></td>
@@ -80,8 +77,9 @@
                                                 <?php endif; ?>
                                                 <a href="/belom" class="btn btn-warning"><i class="bi bi-eye-fill"></i></i></a>
                                             </td> -->
-                            <td><button type="button" class="btn btn-warning"><i class="fa fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                            <td>
+                                <a href="/delete-transaksi/<?= $trans['id'] ?>" class="btn btn-danger"><i
+                                        class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                         <?php

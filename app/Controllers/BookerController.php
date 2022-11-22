@@ -46,7 +46,7 @@ class BookerController extends BaseController
     public function jadiPengelola() {
         auth()->user()->addGroup('field-manager');
         auth()->user()->removeGroup('user');
-        return redirect()->to('dashboard');
+        return redirect()->to('pengelola/lapangan');
     }
 
     public function riwayatPembayaran()

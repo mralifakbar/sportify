@@ -18,17 +18,38 @@ use CodeIgniter\Shield\Models\GroupModel;
 class AdminController extends BaseController
 {   
     public function dashboard() {
-        return view('admin/admin-dashboard');
+        if (AdminController::isAdmin()) {
+            return view('admin/admin-dashboard');}
+        else {
+            return redirect()->to('denied');
+        }
+        
     }
 
     public function deleteUser($id) {
-        (new UserModel())->delete($id);
+        if (AdminController::isAdmin()) {
+            (new UserModel())->delete($id);
         (new GroupModel())->delete($id);
         return redirect()->to('admin/user');
+        }
+        else {
+            return redirect()->to('denied');
+        }
+        
     }
-    
+    public function deleteTransaksi($id) {
+        if (AdminController::isAdmin()) {
+            (new Transaksi())->delete($id);
+        return redirect()->to('admin/transaksi');
+        }
+        else {
+            return redirect()->to('denied');
+        }
+        
+    }
     public function tableUser()
     {
+        if (AdminController::isAdmin()) {
         $user = new UserModel();
         $userM = new GroupModel();
         $data = [
@@ -36,21 +57,34 @@ class AdminController extends BaseController
             'role' => $userM->findAll(),
         ];
         return view('admin/table', $data);
+        }
+        else {
+            return redirect()->to('denied');
+        }
+        
     }
 
     public function tablepengelola()
     {
+        if (AdminController::isAdmin()) {
         $lapangan = new Lapangan();
 
         $data = [
             'lapangan' => $lapangan->findAll(),
         ];
         return view('admin/table-pengelola', $data);
+        }
+        else {
+            return redirect()->to('denied');
+        }
+        
     }
     
     public function transaksiUsers()
     {
-        $lapangan = new Lapangan();
+        // dd(auth()->user()->getGroups());
+        if (AdminController::isAdmin()) {
+$lapangan = new Lapangan();
         $transaksi = new Transaksi();
         $waktu = new Waktu();
         
@@ -76,6 +110,14 @@ class AdminController extends BaseController
 
         // dd($data['transaksi']);
         return view('admin/transaksi-users', $data);
+        }
+        else {
+            return redirect()->to('denied');
+        }
+        
     }
 
+    public function isAdmin() {
+        return auth()->user()->getGroups()[0] == 'admin';
+    }
 }

@@ -75,9 +75,10 @@ $routes->get('admin/lapangan', 'AdminController::tablepengelola');
 $routes->get('admin/transaksi', 'AdminController::transaksiUsers');
 $routes->get('admin/dashboard', 'AdminController::dashboard');
 $routes->get('delete-user/(:num)', 'AdminController::deleteUser/$1');
+$routes->get('delete-transaksi/(:num)', 'AdminController::deleteTransaksi/$1');
 
 //pengelola
-$routes->get('pengelola', 'PengelolaController::dashboard');
+$routes->get('pengelola', 'PengelolaController::lapangan');
 $routes->get('pengelola/dashboard', 'PengelolaController::dashboard');
 $routes->get('pengelola/lapangan', 'PengelolaController::lapangan');
 $routes->get('pengelola/transaksi', 'PengelolaController::transaksi');
