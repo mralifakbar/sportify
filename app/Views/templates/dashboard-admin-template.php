@@ -48,7 +48,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="admin-dashboard">
+                <a class="nav-link" href="/admin/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard </span></a>
             </li>
@@ -61,30 +61,24 @@
                 Interface
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
-                <a class="nav-link" href="chart">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Charts </span></a>
-            </li>
             <!-- Nav Item - Utilities Collapse Menu -->
 
             <li class="nav-item active">
-                <a class="nav-link" href="table">
+                <a class="nav-link" href="/admin/user">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Tabel users</span></a>
+                    <span>User</span></a>
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="transaksi-users">
+                <a class="nav-link" href="/admin/transaksi">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Transaksi users </span></a>
+                    <span>Transaksi </span></a>
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="table-pengelola">
+                <a class="nav-link" href="/admin/pengelola">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Table pengelola </span></a>
+                    <span>Lapangan </span></a>
             </li>
 
 

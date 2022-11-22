@@ -63,15 +63,16 @@ $routes->get('detail/(:num)', 'BookerController::detailLapangan/$1');
 $routes->get('order/(:num)', 'BookerController::pesanLapangan/$1');
 $routes->post('bayar', 'BookerController::bayar');
 $routes->get('cancel-booking/(:num)', 'BookerController::cancelBooking/$1');
+$routes->get('jadi-pengelola', 'BookerController::jadiPengelola');
 
 // auth
 service('auth')->routes($routes);
 
 // admin
-$routes->get('table', 'Home::table');
+$routes->get('admin/user', 'AdminController::tableUser');
 $routes->get('table-pengelola', 'AdminController::tablepengelola');
 $routes->get('transaksi-users', 'AdminController::transaksiUsers');
-$routes->get('admin-dashboard', 'Home::admindashboard');
+$routes->get('admin/dashboard', 'AdminController::dashboard');
 
 //pengelola
 $routes->get('pengelola', 'PengelolaController::dashboard');
@@ -82,6 +83,7 @@ $routes->post('add/lapangan', 'PengelolaController::handleTambahLapangan');
 $routes->get('update-lapangan/(:num)', 'PengelolaController::updateLapangan/$1');
 $routes->get('delete-lapangan/(:num)', 'PengelolaController::handleDeleteLapangan/$1');
 $routes->post('update-lapangan', 'PengelolaController::handleUpdateLapangan');
+$routes->get('jadi-user', 'PengelolaController::jadiUser');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

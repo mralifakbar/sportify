@@ -1,6 +1,6 @@
 <?= $this->extend('templates/dashboard-admin-template.php') ?>
 
-<?= $this->section('title') ?> Transaksi <?= $this->endSection() ?>
+<?= $this->section('title') ?> Dashboard <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
 

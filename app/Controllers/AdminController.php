@@ -11,12 +11,24 @@ use App\Models\Waktu;
 use Codeigniter\Shield\Models\UserModel;
 use CodeIgniter\I18n\Time;
 use App\Controllers\BaseController;
+use App\Models\AuthGroupModel;
+use CodeIgniter\Shield\Entities\UserIdentity;
+use CodeIgniter\Shield\Models\GroupModel;
 
 class AdminController extends BaseController
-{
-    public function table()
+{   
+    public function dashboard() {
+        return view('admin/admin-dashboard');
+    }
+    public function tableUser()
     {
-        return view('admin/table');
+        $user = new UserModel();
+        $userM = new GroupModel();
+        $data = [
+            'user' => $user->findAll(),
+            'role' => $userM->findAll(),
+        ];
+        return view('admin/table', $data);
     }
 
     public function tablepengelola()
