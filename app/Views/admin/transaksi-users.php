@@ -58,7 +58,13 @@
                                                 ?>
                             </td>
                             <td class="align-middle"><?php echo number_format($trans['total_pembayaran']); ?></td>
-                            <td class="align-middle"><button class="btn btn-warning" disabled>Pending</button></td>
+                            <td class="align-middle">
+                                <?php if ($trans['status_pembayaran'] == 'Pending'): ?>
+                                <buttton class="btn btn-warning">Pending</buttton>
+                                <?php else: ?>
+                                <buttton class="btn btn-success">Success</buttton>
+                                <?php endif; ?>
+                            </td>
                             <td class="align-middle">
                                 <?php if ($trans['tanggal'] > $time):?>
                                 Akan Datang
@@ -80,6 +86,10 @@
                             <td>
                                 <a href="/delete-transaksi/<?= $trans['id'] ?>" class="btn btn-danger"><i
                                         class="fa fa-trash"></i></a>
+                                <?php if ($trans['total_pembayaran'] != 'Pending'): ?>
+                                <a href="/confirm-pay/<?= $trans['id'] ?>" class="btn btn-success"><i
+                                        class="fa fa-check"></i></a>
+                                <?php endif; ?>
                             </td>
                         </tr>
                         <?php

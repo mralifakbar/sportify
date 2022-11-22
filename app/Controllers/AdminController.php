@@ -117,7 +117,15 @@ $lapangan = new Lapangan();
         
     }
 
-    public function isAdmin() {
+    public function confirmPay($id) {
+        $transaksi = new Transaksi();
+        $transaksi->update($id, [
+            'status_pembayaran' => 'Success',
+        ]);
+        return redirect()->to('admin/transaksi');
+    }
+
+    static public function isAdmin() {
         return auth()->user()->getGroups()[0] == 'admin';
     }
 }

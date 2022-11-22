@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\Fasilitas;
 use App\Models\Lapangan;
 use App\Models\Transaksi;
 use App\Models\Waktu;
@@ -36,10 +37,12 @@ class PengelolaController extends BaseController
     }
 
     public function handleTambahLapangan() {
+        // dd($this->request->getPost());
+        $fasilitas = new Fasilitas();
         if (PengelolaController::isFieldManager()) {
             $lapangan = new Lapangan();
         $lapanganData = $this->request->getPost();
-
+        // dd(in_array('Parkir', $lapanganData));
         $lapangan->insert([
             'nama_lapangan' => $lapanganData['namalapangan'],
             'jenis' => $lapanganData['jenis'],
@@ -54,15 +57,65 @@ class PengelolaController extends BaseController
             'id_pengelola' => auth()->user()->id,
             'created_at' => Time::now(),
         ]);
+        
+        if (in_array('Parkir', $lapanganData)) {
+            $fasilitas->insert([
+                'nama_fasilitas' => 'Parkir',
+                'id_lapangan' => (new Lapangan())->orderBy('id', 'DESC')->findAll(1)[0]['id'],
+            ]);
+        }
+        if (in_array('Wifi', $lapanganData)) {
+            $fasilitas->insert([
+                'nama_fasilitas' => 'Wifi',
+                'id_lapangan' => (new Lapangan())->orderBy('id', 'DESC')->findAll(1)[0]['id'],
+            ]);
+        }
+        if (in_array('Toilet', $lapanganData)) {
+            $fasilitas->insert([
+                'nama_fasilitas' => 'Toilet',
+                'id_lapangan' => (new Lapangan())->orderBy('id', 'DESC')->findAll(1)[0]['id'],
+            ]);
+        }
+        if (in_array('Shower', $lapanganData)) {
+            $fasilitas->insert([
+                'nama_fasilitas' => 'Shower',
+                'id_lapangan' => (new Lapangan())->orderBy('id', 'DESC')->findAll(1)[0]['id'],
+            ]);
+        }
+        if (in_array('Toko', $lapanganData)) {
+            $fasilitas->insert([
+                'nama_fasilitas' => 'Toko',
+                'id_lapangan' => (new Lapangan())->orderBy('id', 'DESC')->findAll(1)[0]['id'],
+            ]);
+        }
+        if (in_array('Kantin', $lapanganData)) {
+            $fasilitas->insert([
+                'nama_fasilitas' => 'Kantin',
+                'id_lapangan' => (new Lapangan())->orderBy('id', 'DESC')->findAll(1)[0]['id'],
+            ]);
+        }
+        if (in_array('Mushola', $lapanganData)) {
+            $fasilitas->insert([
+                'nama_fasilitas' => 'Mushola',
+                'id_lapangan' => (new Lapangan())->orderBy('id', 'DESC')->findAll(1)[0]['id'],
+            ]);
+        }
+        if (in_array('Locker', $lapanganData)) {
+            $fasilitas->insert([
+                'nama_fasilitas' => 'Locker',
+                'id_lapangan' => (new Lapangan())->orderBy('id', 'DESC')->findAll(1)[0]['id'],
+            ]);
+        }
             return redirect()->to('/pengelola/lapangan');
         }
+        
         else {
             return redirect()->to('denied');
         }
     }
 
     public function updateLapangan($id) {
-        if (PengelolaController::isFieldManager()) {
+        if (PengelolaController::isFieldManager() || AdminController::isAdmin()) {
             $lapangan = new Lapangan();
             // dd($lapangan->where('id', $id)->findAll()[0]);
             $data = [
@@ -77,7 +130,7 @@ class PengelolaController extends BaseController
     } 
 
     public function handleUpdateLapangan() {
-        if (PengelolaController::isFieldManager()) {
+        if (PengelolaController::isFieldManager() || AdminController::isAdmin()) {
             $lapangan = new Lapangan();
         $lapanganData = $this->request->getPost();
 
@@ -103,7 +156,7 @@ class PengelolaController extends BaseController
     }
 
     public function handleDeleteLapangan($id) {
-        if (PengelolaController::isFieldManager()) {
+        if (PengelolaController::isFieldManager() || AdminController::isAdmin()) {
             (new Lapangan)->delete($id);
             return redirect()->to('/pengelola/lapangan');
         }

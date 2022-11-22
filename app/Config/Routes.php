@@ -70,6 +70,7 @@ service('auth')->routes($routes);
 
 // admin
 $routes->get('admin', 'AdminController::tableUser');
+$routes->get('confirm-pay/(:num)', 'AdminController::confirmPay/$1');
 $routes->get('admin/user', 'AdminController::tableUser');
 $routes->get('admin/lapangan', 'AdminController::tablepengelola');
 $routes->get('admin/transaksi', 'AdminController::transaksiUsers');

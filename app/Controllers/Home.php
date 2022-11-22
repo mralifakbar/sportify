@@ -44,7 +44,7 @@ class Home extends BaseController
         } else if ($userGroup == 'admin') {
             $data['title'] = 'Admin Dashboard';
 
-            return view('admin/admin-dashboard');
+            return redirect()->to('admin/user');
         } else if ($userGroup == 'field-manager') {
             $data['title'] = 'Pengelola Dashboard';
 

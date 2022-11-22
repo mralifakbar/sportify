@@ -65,6 +65,7 @@
                             <!-- Modal body -->
                             <form action="/add/lapangan" method="POST">
                                 <div class="modal-body">
+
                                     <input type="text" name="namalapangan" placeholder="Nama Lapangan"
                                         class="form-control">
                                     <label for="exampleFormControlSelect1"></label><select class="form-control"
@@ -74,6 +75,64 @@
                                         <option value="Basket">Basket</option>
                                         <option value="Badminton">Badminton</option>
                                     </select>
+                                    <br>
+                                    <label for="exampleFormControlSelect1">Fasilitas</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Parkir" name="Parkir"
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Parkir
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Wifi" name="Wifi"
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Wifi
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Toilet" name="Toilet"
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Toilet
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Shower" name="Shower"
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Shower
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Toko" name="Toko"
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Toko
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Kantin" name="Kantin"
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Kantin
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Mushola" name="Mushola"
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Mushola
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Locker" name="Locker"
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Locker
+                                        </label>
+                                    </div>
                                     <br>
                                     <input type="text" name="lokasi" placeholder="Lokasi" class="form-control">
                                     <label for="exampleFormControlSelect1"></label><select class="form-control"

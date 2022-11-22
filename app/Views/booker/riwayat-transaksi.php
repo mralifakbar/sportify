@@ -40,7 +40,12 @@
                             ?>
                         </td>
                         <td class="align-middle"><?php echo number_format($trans['total_pembayaran']); ?></td>
-                        <td class="align-middle"><button class="btn btn-warning" disabled>Pending</button></td>
+                        <td class="align-middle"><?php if ($trans['status_pembayaran'] == 'Pending'): ?>
+                            <buttton class="btn btn-warning">Pending</buttton>
+                            <?php else: ?>
+                            <buttton class="btn btn-success">Success</buttton>
+                            <?php endif; ?>
+                        </td>
                         <td class="align-middle">
                             <?php if ($trans['tanggal'] > $time):?>
                             Akan Datang
