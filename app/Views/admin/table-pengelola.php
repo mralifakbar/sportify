@@ -330,31 +330,21 @@
                                     </thead>
 
                                     <tbody>
-                                        <tr>
-                                            <td>Bang_alif</td>
-                                            <td>Gor Saburai</td>
-                                            <td>Futsal</td>
-                                            <td>Rumput</td>
-                                            <td>Rp.70.000</td>
-                                            <td><button type="button" class="btn btn-warning"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                            </td>
-
-                                        </tr>
-
-                                        <tr>
-                                            <td>nasywanathaania</td>
-                                            <td>Gor Dekhafin</td>
-                                            <td>Badmintoon</td>
-                                            <td>Lantai</td>
-                                            <td>Rp.50.000</td>
-                                            <td><button type="button" class="btn btn-warning"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                            </td>
-
-                                        </tr>
-
-
+                                        
+                                    <?php
+                                    foreach ($lapangan as $lp) {
+                                    ?>
+                                    <tr>
+                                    <td class="align-middle">daffaputra</td> 
+                                    <td class="align-middle"><?php echo $lp['nama_lapangan'];?></td>
+                                    <td class="align-middle"><?php echo $lp['jenis'];?></td>
+                                    <td class="align-middle"><?php echo $lp['tipe_lapangan'];?></td>
+                                    <td class="align-middle">Rp.<?php echo $lp['harga'];?></td>
+                                    <td><button type="button" class="btn btn-warning"><i class="fa fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                    </td>
+                                    </tr>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
                             </div>

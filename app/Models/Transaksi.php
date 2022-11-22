@@ -29,6 +29,7 @@ class Transaksi extends Model
         
         $builder = $this->db->table('lapangan');
         $builder->join('transaksi', 'lapangan.id = transaksi.id_lapangan')->where('id_user', auth()->user()->id)->orderBy('tanggal', 'ASC');
+        
 
         $query = $builder->get()->getResultArray();
 
@@ -51,6 +52,15 @@ class Transaksi extends Model
     {
         $builder = $this->db->table('transaksi')->where('id_user', auth()->user()->id);
         $builder->join('waktu', 'waktu.id_transaksi = transaksi.id');
+        $query = $builder->get()->getResultArray();
+
+        return $query;
+    }
+
+    public function getDataUser()
+    {
+        $builder = $this->db->table('users');
+        $builder->join('transaksi', 'users.id = transaksi.id_user');
         $query = $builder->get()->getResultArray();
 
         return $query;

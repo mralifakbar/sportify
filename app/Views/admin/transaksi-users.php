@@ -335,7 +335,55 @@
                                     </thead>
 
                                     <tbody>
+                                        
+                                    
+                                    <?php
+
+                                    foreach ($transaksi as $trans) {
+                                    ?>
                                         <tr>
+
+                                            <td class="align-middle">daffaputra</td>
+                                            <td class="align-middle"><?php echo $trans['nama_lapangan']; ?></td>
+                                            <td class="align-middle"><?php echo $trans['jenis']; ?></td>
+                                            <td class="align-middle"><?php echo $trans['tanggal']; ?></td>
+                                            <td class="align-middle">
+                                                <?php 
+                                                    foreach ($jam as $jm) {
+                                                        if ($jm['id_transaksi'] == $trans['id']) {
+                                                            echo $jm['jam'].".00 ";
+                                                        }
+                                                    }
+                                                ?>
+                                            </td>
+                                            <td class="align-middle"><?php echo number_format($trans['total_pembayaran']); ?></td>
+                                            <td class="align-middle"><button class="btn btn-warning" disabled>Pending</button></td>
+                                            <td class="align-middle">
+                                                <?php if ($trans['tanggal'] > $time):?>
+                                                Akan Datang
+                                                <?php elseif ($trans['tanggal'] == $time): ?>
+                                                Berlangsung hari ini
+                                                <?php else: ?>
+                                                Sudah Selesai
+                                                <?php endif; ?></td>
+
+                                            <!-- <td class="align-middle">
+                                                <?php if ($trans['tanggal'] > $time):?>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#deleteTransModal"
+                                                    id="cancel-<?= $trans['id'] ?>" onclick="cancelBook(<?= $trans['id'] ?>)"
+                                                    data-bs-toggle="tooltip" data-bs-title="Batalkan Penyewaan"><i
+                                                        class="bi bi-x-lg"></i></a>
+                                                <?php endif; ?>
+                                                <a href="/belom" class="btn btn-warning"><i class="bi bi-eye-fill"></i></i></a>
+                                            </td> -->
+                                            <td><button type="button" class="btn btn-warning"><i class="fa fa-edit"></i></button>
+                                                <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                    }
+                                    ?>
+                                        <!-- <tr>
                                             <td>Bang_alif</td>
                                             <td>Gor Saburai</td>
                                             <td>Futsal</td>
@@ -378,7 +426,7 @@
                                                 <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                             </td>
 
-                                        </tr>
+                                        </tr> -->
 
 
                                     </tbody>
