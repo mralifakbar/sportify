@@ -44,7 +44,8 @@
                 <div class="card-hotel-carousel">
                     <a href="/detail/<?= $lp['id']; ?>?dateBook=<?= $tanggal; ?>" class="text-decoration-none">
                         <div class="image-placeholder">
-                            <img src="../assets/images/basket.jpeg" alt="images" />
+                            <img src="<?php if($lp['link_foto'] != '') {echo $lp['link_foto'];} else {echo '../assets/images/basket.jpeg';} ?>"
+                                alt="images" />
                         </div>
                         <div class="card-details">
                             <div class="caption"><?= $lp['nama_lapangan']; ?></div>

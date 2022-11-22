@@ -5,8 +5,8 @@
 <?= $this->section('content') ?>
 <div class="container">
     <div class="card my-3 rounded-5">
-        <img src="../assets/images/lapanganbaru.jpg" height="500" class="card-img-top " alt="..."
-            style="border-radius: 30px 30px 0 0;">
+        <img src="<?php if($lapangan['link_foto'] != '') {echo $lapangan['link_foto'];} else {echo '../assets/images/lapanganbaru.jpg';} ?>"
+            height="500" class="card-img-top " alt="..." style="border-radius: 30px 30px 0 0;">
         <div class="card-body m-3">
             <h5 class="card-title fs-3 text-danger fw-bold">
                 <?= $lapangan['nama_lapangan']; ?>

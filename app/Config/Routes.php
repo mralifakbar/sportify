@@ -69,10 +69,12 @@ $routes->get('jadi-pengelola', 'BookerController::jadiPengelola');
 service('auth')->routes($routes);
 
 // admin
+$routes->get('admin', 'AdminController::tableUser');
 $routes->get('admin/user', 'AdminController::tableUser');
-$routes->get('table-pengelola', 'AdminController::tablepengelola');
-$routes->get('transaksi-users', 'AdminController::transaksiUsers');
+$routes->get('admin/lapangan', 'AdminController::tablepengelola');
+$routes->get('admin/transaksi', 'AdminController::transaksiUsers');
 $routes->get('admin/dashboard', 'AdminController::dashboard');
+$routes->get('delete-user/(:num)', 'AdminController::deleteUser/$1');
 
 //pengelola
 $routes->get('pengelola', 'PengelolaController::dashboard');

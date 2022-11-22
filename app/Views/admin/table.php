@@ -42,7 +42,8 @@
                                 <?=$role[$i]['group'] ?> </td>
                             <td lass="align-middle"><?= $usr->created_at; ?></td>
                             <td>
-                                <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                <a href="/delete-user/<?= $usr->id; ?>" type="button" class="btn btn-danger"><i
+                                        class="fa fa-trash"></i></a>
                         </tr>
 
                         <?php

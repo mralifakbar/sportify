@@ -20,6 +20,13 @@ class AdminController extends BaseController
     public function dashboard() {
         return view('admin/admin-dashboard');
     }
+
+    public function deleteUser($id) {
+        (new UserModel())->delete($id);
+        (new GroupModel())->delete($id);
+        return redirect()->to('admin/user');
+    }
+    
     public function tableUser()
     {
         $user = new UserModel();

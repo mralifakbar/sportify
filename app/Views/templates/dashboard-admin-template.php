@@ -76,7 +76,7 @@
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="/admin/pengelola">
+                <a class="nav-link" href="/admin/lapangan">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Lapangan </span></a>
             </li>
