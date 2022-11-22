@@ -42,15 +42,12 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('view', 'Home::view');
 $routes->get('dashboard', 'Home::dashboard');
-$routes->get('admin-dashboard', 'Home::admindashboard');
-$routes->get('dashboard-pengelola', 'Home::pengelolaDashboard');
-$routes->get('table-lapangan', 'Home::tableLapangan');
-$routes->get('table-datatransaksi', 'Home::tableDataTransaksi');
-$routes->get('table', 'Home::table');
+$routes->get('denied', 'Home::accessDenied');
 $routes->get('chart', 'Home::chart');
 $routes->get('login-admin', 'Home::loginadmin');
 $routes->get('forget', 'Home::forget');
-$routes->get('test', 'Home::test');
+$routes->get('test', 'Home::testView');
+$routes->post('test', 'Home::test');
 $routes->post('res', 'Home::konfirmasiPemesanan');
 $routes->post('belom', 'Home::belom');
 $routes->get('belom', 'Home::belom');
@@ -70,10 +67,21 @@ $routes->get('cancel-booking/(:num)', 'BookerController::cancelBooking/$1');
 // auth
 service('auth')->routes($routes);
 
-//AdminController
+// admin
+$routes->get('table', 'Home::table');
 $routes->get('table-pengelola', 'AdminController::tablepengelola');
 $routes->get('transaksi-users', 'AdminController::transaksiUsers');
+$routes->get('admin-dashboard', 'Home::admindashboard');
 
+//pengelola
+$routes->get('pengelola', 'PengelolaController::dashboard');
+$routes->get('pengelola/dashboard', 'PengelolaController::dashboard');
+$routes->get('pengelola/lapangan', 'PengelolaController::lapangan');
+$routes->get('pengelola/transaksi', 'PengelolaController::transaksi');
+$routes->post('add/lapangan', 'PengelolaController::handleTambahLapangan');
+$routes->get('update-lapangan/(:num)', 'PengelolaController::updateLapangan/$1');
+$routes->get('delete-lapangan/(:num)', 'PengelolaController::handleDeleteLapangan/$1');
+$routes->post('update-lapangan', 'PengelolaController::handleUpdateLapangan');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
@@ -87,6 +95,7 @@ $routes->get('transaksi-users', 'AdminController::transaksiUsers');
  * You will have access to the $routes object within that file without
  * needing to reload it.
  */
+
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

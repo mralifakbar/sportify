@@ -12,6 +12,7 @@ use App\Models\Transaksi;
 use App\Models\DetailCustomer;
 use App\Models\Fasilitas;
 use CodeIgniter\I18n\Time;
+use CodeIgniter\Files\File;
 
 class Home extends BaseController
 { 
@@ -58,14 +59,17 @@ class Home extends BaseController
 
     public function view()
     {
+        $user = new UserModel();
         return view('auth/login');
     }
     
     public function test()
     {
-        auth()->user()->removeGroup('field-manager');
-        auth()->user()->addGroup('user');
-        dd(auth()->user()->getGroups());
+        dd($this->request->getPost());
+    }
+    
+    public function testView() 
+    {
         return view('testing');
     }
     
@@ -94,20 +98,13 @@ class Home extends BaseController
     {
         return view('admin/chart');
     }
-    public function pengelolaDashboard()
-    {
-        return view('pengelola-lapangan/dashboard-pengelola');
-    }
-    public function tableLapangan()
-    {
-        return view('pengelola-lapangan/table-lapangan');
-    }
-    public function tableDataTransaksi()
-    {
-        return view('pengelola-lapangan/table-datatransaksi');
-    }
+    
     
     public function belom() {
         echo "<h1 class='text-center'>Belom bisa gan</h1>";
+    }
+
+    public function accessDenied() {
+        echo "<h1 class='text-center'>AccessDenied</h1>";
     }
 }

@@ -2,6 +2,9 @@
 
 namespace Config;
 
+use Codeigniter\Shield\Auth;
+use CodeIgniter\Shield\Entities\User;
+use CodeIgniter\Shield\Models\UserModel;
 use CodeIgniter\Config\BaseService;
 
 /**
