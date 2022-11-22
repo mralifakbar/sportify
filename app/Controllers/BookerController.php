@@ -43,6 +43,12 @@ class BookerController extends BaseController
         return view('booker/riwayat-transaksi', $data);
     }
 
+    public function jadiPengelola() {
+        auth()->user()->addGroup('field-manager');
+        auth()->user()->removeGroup('user');
+        return redirect()->to('dashboard');
+    }
+
     public function riwayatPembayaran()
     {
         $data = [

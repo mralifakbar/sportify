@@ -111,7 +111,13 @@ class PengelolaController extends BaseController
             return redirect()->to('denied');
         }
     }
-    
+
+    public function jadiUser() {
+        auth()->user()->removeGroup('field-manager');
+        auth()->user()->addGroup('user');
+        return redirect()->to('dashboard');
+    }
+
     public function transaksi()
     {
         if (PengelolaController::isFieldManager()) {

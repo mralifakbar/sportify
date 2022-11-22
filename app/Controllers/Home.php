@@ -83,16 +83,7 @@ class Home extends BaseController
     {
         return view('admin/admin-login');
     }
-    
-    public function admindashboard()
-    {
-        return view('admin/admin-dashboard');
-    }
-    
-    public function table()
-    {
-        return view('admin/table');
-    }
+
     
     public function chart()
     {
